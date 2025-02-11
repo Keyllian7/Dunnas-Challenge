@@ -101,7 +101,10 @@ GEM
     debug (1.10.0)
       irb (~> 1.10)
       reline (>= 0.3.8)
-    dotenv (3.1.7)
+    dotenv (2.8.1)
+    dotenv-rails (2.8.1)
+      dotenv (= 2.8.1)
+      railties (>= 3.2)
     drb (2.2.1)
     ed25519 (1.3.0)
     erubi (1.13.1)
@@ -127,17 +130,17 @@ GEM
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
     json (2.10.1)
-    kamal (2.5.2)
+    kamal (1.9.2)
       activesupport (>= 7.0)
       base64 (~> 0.2)
       bcrypt_pbkdf (~> 1.0)
       concurrent-ruby (~> 1.2)
-      dotenv (~> 3.1)
+      dotenv (~> 2.8)
       ed25519 (~> 1.2)
-      net-ssh (~> 7.3)
+      net-ssh (~> 7.0)
       sshkit (>= 1.23.0, < 2.0)
-      thor (~> 1.3)
-      zeitwerk (>= 2.6.18, < 3.0)
+      thor (~> 1.2)
+      zeitwerk (~> 2.5)
     language_server-protocol (3.17.0.4)
     logger (1.6.5)
     loofah (2.24.0)
@@ -354,10 +357,11 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  dotenv-rails (~> 2.1, >= 2.1.1)
   importmap-rails
   jbuilder
   kamal
-  pg (~> 1.1)
+  pg (~> 1.5, >= 1.5.6)
   propshaft
   puma (>= 5.0)
   rails (~> 8.0.1)
