@@ -9,4 +9,6 @@
     <% end %>
 </div>
 
-<%= link_to 'New Unit', new_unit_path %>
+<% if can? :create, Unit %>
+  <%= link_to 'New Unit', new_unit_path %>
+<% end %>

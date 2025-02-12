@@ -12,10 +12,10 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
 
-  get "/home", to: "home#index"
-  get "/dashboard", to: "home#dashboard"
+  get "/home", to: "app#index"
+  get "/dashboard", to: "app#dashboard"
 
   resources :units
 
-  root "home#index"
+  root "app#index"
 end
