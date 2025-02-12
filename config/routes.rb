@@ -15,5 +15,7 @@ Rails.application.routes.draw do
   get "/home", to: "home#index"
   get "/dashboard", to: "home#dashboard"
 
+  resources :unit
+
   root "home#index"
 end
