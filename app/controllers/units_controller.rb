@@ -1,6 +1,6 @@
 class UnitsController < ApplicationController
+  before_action :authenticate_user!
   load_and_authorize_resource
-  before_action :authenticate_user!, except: [ :index ]
 
   def index
     @units = Unit.all
