@@ -1,5 +1,5 @@
 class AppController < ApplicationController
-  before_action :authenticate_user!, except: [:index]
+  before_action :authenticate_user!, except: [ :index ]
 
   def index
     @message = "Hello, World!"
@@ -8,5 +8,4 @@ class AppController < ApplicationController
   def dashboard
     @message = "Welcome to the dashboard!"
   end
-
 end
