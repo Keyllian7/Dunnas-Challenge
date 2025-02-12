@@ -1,0 +1,16 @@
+<h1>Units#new</h1>
+
+<h1>New unit</h1>
+
+<%= form_with model: @unit do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :email%>
+    <%= form.text_field :email %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

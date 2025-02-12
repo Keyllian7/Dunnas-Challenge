@@ -1,0 +1,14 @@
+<h1>Units#index</h1>
+
+<h1>Units</h1>
+<div id="units">
+  <% @units.each do |unit| %>
+    <div>
+    <%= unit.name %>  
+    </div>
+    <% end %>
+</div>
+
+<% if can? :create, Unit %>
+  <%= link_to 'New Unit', new_unit_path %>
+<% end %>
