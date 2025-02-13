@@ -1,0 +1,14 @@
+<% if @visitor.photo? %>
+    <p>Current photo:</p>
+    <%= image_tag @visitor.photo.url, whidt: 100, height: 100, class: "rounded-circle"%>
+<% end %>
+<p>Name: <%= @visitor.name %></p>
+<p>RG: <%= @visitor.rg %></p>
+<p>CPF: <%= @visitor.cpf %></p>
+<p>telephone: <%= @visitor.telephone %></p>
+
+<%= link_to 'Back', visitors_path %>
+<% if can? :manage, Visitor %>
+    <%= link_to "Update", edit_visitor_path%>
+    <%= button_to "Delete", @visitor, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<% end %>

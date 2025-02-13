@@ -30,11 +30,13 @@
     <div>
       <% if user_signed_in? %>
 
+        <%= link_to "Home", root_path%>
         <%= button_to "Log out", destroy_user_session_path, method: :delete %>
         <%= link_to "Profile", edit_user_registration_path%>
         <%= image_tag current_user.photo.url, whidt: 100, height: 100, class: "rounded-circle"%>
         <%= link_to "Units", units_path%>
         <%= link_to "Sectors", sectors_path%>
+        <%= link_to "Visitors", visitors_path%>
 
       <% else %>
         <%= link_to "Login", new_user_session_path %>
