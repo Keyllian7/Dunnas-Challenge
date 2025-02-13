@@ -1,0 +1,12 @@
+<%= form_with model: @unit do |unit| %>
+    <div>
+        <%= unit.label :name %>
+        <%= unit.text_field :name %><br>
+        <%= unit.label :email %>
+        <%= unit.email_field :email %>
+    </div>
+
+    <div>
+        <%= unit.submit %>
+    </div>
+<% end %>

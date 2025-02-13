@@ -1,0 +1,8 @@
+<h1>Name: <%= @unit.name %></h1>
+<p>Email: <%= @unit.email %></p>
+
+<%= link_to 'Back', units_path %>
+<% if can? :manage, Unit %>
+    <%= link_to 'Edit unit', edit_unit_path(@unit)%>
+    <%= button_to "Delete", @unit, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<% end %>

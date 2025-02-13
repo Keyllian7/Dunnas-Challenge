@@ -4,7 +4,7 @@
 <div id="units">
   <% @units.each do |unit| %>
     <div>
-    <%= unit.name %>  
+    <%= link_to unit.name, unit %>  
     </div>
     <% end %>
 </div>
