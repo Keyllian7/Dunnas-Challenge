@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/dashboard", to: "web#dashboard"
 
   resources :units
+  resources :sectors
 
   root "web#index"
 end
