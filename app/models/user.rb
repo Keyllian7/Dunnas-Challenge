@@ -6,15 +6,14 @@ class User < ApplicationRecord
          
   mount_uploader :photo, PhotoUploader
 
-  validates :name presence: true,
-    email: presence: true, uniqueness: true,
-    role: presence: true,
-    photo: presence: false
-    telephone: presence: true
-    cpf: presence: true
-    rg: presence: true
-    unit_id: presence: false
-    sector_id: presence: false
+  validates :email, presence: true, uniqueness: true
+  validates :name, presence: true
+  validates :telephone, presence: true
+  validates :cpf, presence: true
+  validates :rg, presence: true
+  validates :photo, presence: false
+  validates :unit_id, presence: false
+  validates :sector_id, presence: false
 
   belongs_to :unit, optional: true
   belongs_to :sector, optional: true

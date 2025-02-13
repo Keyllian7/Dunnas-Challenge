@@ -26,6 +26,31 @@
     <%= f.file_field :photo %>
   </div>
 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cpf %><br />
+    <%= f.text_field :cpf %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rg %><br />
+    <%= f.text_field :rg %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telephone %><br />
+    <%= f.telephone_field :telephone %>
+  </div>
+
+  <div class="field">
+    <%= f.label :role %><br />
+    <%= f.select :role, [0, 1, 2] %>
+  </div>
+
   <% if resource.photo? %>
     <p>Current photo:</p>
     <%= image_tag resource.photo.url, whidt: 100%>

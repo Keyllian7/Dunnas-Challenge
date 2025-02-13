@@ -4,14 +4,14 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
-    if user.role == "admin"
+    if user.role == 2
       can :manage, :all
-    elsif user.role == "attendant"
+    elsif user.role == 1
       can :read, :all
       can :create, :all
       can :update, :all
       can :destroy, :all
-    else user.role == "employee"
+    else user.role == 0
       can :read, :all
     end
     # Define abilities for the user here. For example:
