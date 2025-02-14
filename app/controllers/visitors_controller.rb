@@ -1,7 +1,7 @@
 class VisitorsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
-  before_action :set_visitor, only: [:edit, :update, :show, :destroy]
+  before_action :set_visitor, only: [ :edit, :update, :show, :destroy ]
 
   def index
     @visitors = Visitor.all
@@ -48,5 +48,4 @@ class VisitorsController < ApplicationController
   def set_visitor
     @visitor = Visitor.find(params[:id])
   end
-
 end

@@ -1,5 +1,5 @@
 class Sector < ApplicationRecord
-  validates :name , presence: true
+  validates :name, presence: true
   validates :unit_id, presence: true
 
   belongs_to :unit

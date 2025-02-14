@@ -8,5 +8,4 @@ class Visitor < ApplicationRecord
     mount_uploader :photo, PhotoUploader
 
     has_many :visits
-    
 end

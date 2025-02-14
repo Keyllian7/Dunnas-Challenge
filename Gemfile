@@ -13,9 +13,9 @@ gem "devise"
 # Use Cancan for user authorization [
 gem "cancancan"
 # Use CarrierWave for file uploads [
-gem 'carrierwave', '~> 2.0'
+gem "carrierwave", "~> 2.0"
 # Use MiniMagick for image processing [
-gem 'mini_magick'
+gem "mini_magick"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
