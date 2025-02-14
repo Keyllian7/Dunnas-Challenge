@@ -29,8 +29,8 @@
 
     <div>
       <% if user_signed_in? %>
-
-        <%= image_tag current_user.photo.url, whidt: 10, height: 10, class: "rounded-circle"%>
+        <%= image_tag current_user.photo.url, width: 100, height: 100, class: "rounded-circle" %>
+        <%= current_user.remote_photo_url %>
         <%= link_to "Profile", edit_user_registration_path%>
         <br>
         <%= link_to "Home", root_path%>
