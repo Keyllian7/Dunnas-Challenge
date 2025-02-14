@@ -1,0 +1,14 @@
+<h1>Sector#index</h1>
+
+<h1>Sectors</h1>
+<div id="units">
+  <% @sectors.each do |sector| %>
+    <div>
+    <%= link_to sector.name, sector %>  
+    </div>
+    <% end %>
+</div>
+
+<% if can? :manage, Sector %>
+  <%= link_to 'New Sector', new_sector_path %>
+<% end %>

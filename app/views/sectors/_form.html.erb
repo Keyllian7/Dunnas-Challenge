@@ -1,0 +1,11 @@
+<%= form_with model: @sector do |sector| %>
+    <div>
+        <%= sector.label :name %>
+        <%= sector.text_field :name %><br>
+        <h1>Unit: <%= sector.collection_select :unit_id, Unit.all, :id, :name %></h1>
+    </div>
+
+    <div>
+        <%= sector.submit %>
+    </div>
+<% end %>

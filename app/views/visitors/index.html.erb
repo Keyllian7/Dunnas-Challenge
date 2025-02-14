@@ -1,0 +1,8 @@
+<h1>Visitor#index</h1>
+<p><% @visitors.each do |visitor|%></p>
+    <p>Name: <%= link_to visitor.name, visitor %></p>  
+<% end %>
+
+<% if can? :manage, Visitor %>
+  <%= link_to 'New visitor', new_visitor_path %>
+<% end %>

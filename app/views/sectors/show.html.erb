@@ -1,0 +1,10 @@
+<h1>Sector</h1>
+
+<h4>Nome do setor: <%= @sector.name%></h4>
+<p>Unidade pertencente: <%= @sector.unit.name%></p>
+
+<%= link_to 'Back', sectors_path %>
+<% if can? :manage, Sector %>
+    <%= button_to "Delete", @sector, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+    <%= link_to 'Edit sector', edit_sector_path(@sector)%>
+<% end %>

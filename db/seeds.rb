@@ -12,4 +12,5 @@ user = User.where(email: "keyllianazevedo2@gmail.com").first_or_initialize
 user.update!(
     password: "123456",
     password_confirmation: "123456",
+    role: "admin"
 )

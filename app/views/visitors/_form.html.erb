@@ -1,0 +1,22 @@
+<%= form_with model: @visitor do |visitor| %>
+    <div>
+        <%= visitor.label :name %>
+        <%= visitor.text_field :name %><br>
+        <%= visitor.label :cpf %>
+        <%= visitor.text_field :cpf%><br>
+        <%= visitor.label :rg %>
+        <%= visitor.text_field :rg%><br>
+        <%= visitor.label :telephone %>
+        <%= visitor.telephone_field :telephone%><br>
+        <%= visitor.label :photo %>
+        <%= visitor.file_field :photo%>
+        <% if @visitor.photo? %>
+            <p>Current photo:</p>
+            <%= image_tag @visitor.photo.url, whidt: 100, height: 100, class: "rounded-circle"%>
+        <% end %>
+    </div>
+
+    <div>
+        <%= visitor.submit %>
+    </div>
+<% end %>

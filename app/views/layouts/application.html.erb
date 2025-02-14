@@ -29,7 +29,17 @@
 
     <div>
       <% if user_signed_in? %>
+
+        <%= image_tag current_user.photo.url, whidt: 10, height: 10, class: "rounded-circle"%>
+        <%= link_to "Profile", edit_user_registration_path%>
+        <br>
+        <%= link_to "Home", root_path%>
+        <%= link_to "Units", units_path%>
+        <%= link_to "Sectors", sectors_path%>
+        <%= link_to "Visitors", visitors_path%>
+        <%= link_to "Visit", visits_path%>
         <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+
       <% else %>
         <%= link_to "Login", new_user_session_path %>
       <% end %>

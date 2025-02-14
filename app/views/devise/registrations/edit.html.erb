@@ -31,6 +31,16 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+  <div class="field">
+    <%= f.label :photo %><br />
+    <%= f.file_field :photo %>
+  </div>
+
+  <% if resource.photo? %>
+    <p>Current photo:</p>
+    <%= image_tag resource.photo.url, whidt: 100, height: 100, class: "rounded-circle" %>
+  <% end %>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
