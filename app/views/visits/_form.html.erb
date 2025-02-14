@@ -5,6 +5,7 @@
         <p>Sector: <%= visit.collection_select :sector_id, Sector.all, :id, :name %></p>
         <p>Visit Date: <%= visit.datetime_field :date_time %></p>
         <p>Functionario: <%= visit.collection_select :user_id, User.where(role: 2), :id, :name %></p>
+        <p>Status: <%= visit.select :status, Visit.statuses.keys.map { |s| [s.humanize, s] } %></p>
     </div>
 
     <div>

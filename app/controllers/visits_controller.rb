@@ -14,6 +14,17 @@ class VisitsController < ApplicationController
     @visit = Visit.new
   end
 
+  def edit
+  end
+
+  def update
+    if @visit.update(visit_params)
+      redirect_to visit_path
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def destroy
     @visit.destroy
     redirect_to visits_path

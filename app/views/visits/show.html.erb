@@ -1,14 +1,15 @@
 <h1>Visit</h1>
 
-<h4>Visitor <%= @visit.visitor.name%></h4>
-<p>Unit: <%= @visit.unit.name%></p>
-<p>Sector: <%= @visit.sector.name%></p>
+<h4>Visitor <%= link_to @visit.visitor.name, visitor_path(@visit.visitor.id)%></h4>
+<p>Unit: <%= link_to @visit.unit.name, unit_path(@visit.unit.id)%></p>
+<p>Sector: <%= link_to @visit.sector.name, sector_path(@visit.sector.id)%></p>
+<p>Functionario: <%= @visit.user.name %></p>
 <p>Visit Date: <%= @visit.date_time%></p>
-<p>Functionario: <%= @visit.user.name%></p>
 <p>Status: <%= @visit.status%></p>
 
 <%= link_to 'Back', visits_path %>
 
 <% if can? :manage, Visit %>
+    <%= link_to "Edit vist", edit_visit_path%>
     <%= button_to "Delete", @visit, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
 <% end %>
