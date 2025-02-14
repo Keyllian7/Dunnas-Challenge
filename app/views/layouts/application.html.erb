@@ -22,28 +22,31 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="max-h-full bg-gray-500">
 
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <p class="notice bg-green-500"><%= notice %></p>
+    <p class="alert bg-red-500"><%= alert %></p>
 
-    <div>
-      <% if user_signed_in? %>
-        <%= image_tag current_user.photo.url, width: 100, height: 100, class: "rounded-circle" %>
-        <%= current_user.remote_photo_url %>
-        <%= link_to "Profile", edit_user_registration_path%>
-        <br>
-        <%= link_to "Home", root_path%>
-        <%= link_to "Units", units_path%>
-        <%= link_to "Sectors", sectors_path%>
-        <%= link_to "Visitors", visitors_path%>
-        <%= link_to "Visit", visits_path%>
-        <%= button_to "Log out", destroy_user_session_path, method: :delete %>
+    <nav class="flex bg-gray-500 justify-between p-4">  
+          <% if user_signed_in? %>
+            <%= link_to (image_tag current_user.photo.url), edit_user_registration_path%>
+            <%= current_user.remote_photo_url %>
+            <%= link_to "Home", root_path%>
+            <%= link_to "Units", units_path%>
+            <%= link_to "Sectors", sectors_path%>
+            <%= link_to "Visitors", visitors_path%>
+            <%= link_to "Visit", visits_path%>
+            <%= button_to "Log out", destroy_user_session_path, method: :delete %>
 
-      <% else %>
-        <%= link_to "Login", new_user_session_path %>
-      <% end %>
-    </div>
+        <% else %>
+
+          <%= link_to "Home", root_path%>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+        </div>
+      </div>
+    </nav>
+
 
     <%= yield %>
   </body>
