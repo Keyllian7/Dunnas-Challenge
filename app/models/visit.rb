@@ -1,12 +1,10 @@
 class Visit < ApplicationRecord
-  validates :visitor_id: presence: true,
-    unit_id: presence: true,
-    sector_id: presence: true,
-    user_id: presence: false
-    date_time: presence: true,
-    status: presence: true default: 0 
-
-    enum: status: { scheduled: 0, completed: 1, cancelled: 2, rescheduled: 3, absent: 4 }
+  validates :visitor_id, presence: true
+  validates :unit_id, presence: true
+  validates :sector_id, presence: true
+  validates :user_id, presence: false
+  validates :date_time, presence: true
+  validates :status, presence: true
 
   belongs_to :visitor
   belongs_to :unit

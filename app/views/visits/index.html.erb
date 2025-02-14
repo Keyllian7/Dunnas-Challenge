@@ -1,0 +1,12 @@
+<h1>Visit#index</h1>
+
+<h1>Visit</h1>
+
+<% @visits.each do |visit|%>
+    <p><%= link_to visit.date_time, visit %></p>
+<%end%>
+
+
+<% if can? :manage, Visit %>
+  <%= link_to 'New visit', new_visit_path %>
+<% end %>

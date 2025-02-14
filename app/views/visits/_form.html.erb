@@ -1,0 +1,13 @@
+<%= form_with model: @visit do |visit| %>
+    <div>
+        <p>Visitor: <%= visit.collection_select :visitor_id, Visitor.all, :id, :name %></p>
+        <p>Unit: <%= visit.collection_select :unit_id, Unit.all, :id, :name %></p>
+        <p>Sector: <%= visit.collection_select :sector_id, Sector.all, :id, :name %></p>
+        <p>Visit Date: <%= visit.datetime_field :date_time %></p>
+        <p>Functionario: <%= visit.collection_select :user_id, User.where(role: 2), :id, :name %></p>
+    </div>
+
+    <div>
+        <%= visit.submit %>
+    </div>
+<% end %>

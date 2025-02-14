@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :units
   resources :sectors
   resources :visitors
+  resources :visits
 
   root "web#index"
 end
