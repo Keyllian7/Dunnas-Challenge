@@ -11,7 +11,8 @@ class Ability
       can :create, :all
       can :update, :all
       can :destroy, :all
-    else user.role == 0
+    else
+      user.role
       can :read, :all
     end
     # Define abilities for the user here. For example:
