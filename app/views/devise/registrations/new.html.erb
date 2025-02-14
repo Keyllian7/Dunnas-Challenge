@@ -48,7 +48,7 @@
 
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.select :role, [0, 1, 2] %>
+    <p>Role: <%= f.select :role, User.roles.keys.map { |s| [s.humanize, s] } %></p>
   </div>
 
   <% if resource.photo? %>

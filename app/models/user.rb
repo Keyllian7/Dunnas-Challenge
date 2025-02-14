@@ -15,6 +15,8 @@ class User < ApplicationRecord
   validates :unit_id, presence: false
   validates :sector_id, presence: false
 
+  enum :role, { employee: 0, attendant: 1, admin: 2 }
+
   belongs_to :unit, optional: true
   belongs_to :sector, optional: true
   has_many :visits
