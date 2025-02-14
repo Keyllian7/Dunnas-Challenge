@@ -1,14 +1,17 @@
-<h1>Units#index</h1>
+<div class="max-w-4xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+  <h1 class="text 3xl font-bold mb-6">Units</h1>
 
-<h1>Units</h1>
-<div id="units">
-  <% @units.each do |unit| %>
-    <div>
-    <%= link_to unit.name, unit %>  
+  <div class="space-y-4"id="units">
+    <% @units.each do |unit| %>
+      <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
+      <%= link_to unit.name, unit, class: "text-lg font-medium text-blue-400 hover:underline" %>  
+      </div>
+      <% end %>
+  </div>
+
+  <% if can? :create, Unit %>
+    <div class="mt-6">
+    <%= link_to 'New Unit', new_unit_path, class: "bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
     </div>
-    <% end %>
+  <% end %>
 </div>
-
-<% if can? :create, Unit %>
-  <%= link_to 'New Unit', new_unit_path %>
-<% end %>
