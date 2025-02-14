@@ -16,6 +16,8 @@ gem "cancancan"
 gem "carrierwave", "~> 2.0"
 # Use MiniMagick for image processing [
 gem "mini_magick"
+# Use Fog for AWS S3 storage [
+gem "fog-aws"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]

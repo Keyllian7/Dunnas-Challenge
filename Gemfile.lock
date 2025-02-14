@@ -126,12 +126,30 @@ GEM
     erubi (1.13.1)
     et-orbi (1.2.11)
       tzinfo
+    excon (1.2.3)
     ffi (1.17.1-aarch64-linux-gnu)
     ffi (1.17.1-aarch64-linux-musl)
     ffi (1.17.1-arm-linux-gnu)
     ffi (1.17.1-arm-linux-musl)
     ffi (1.17.1-x86_64-linux-gnu)
     ffi (1.17.1-x86_64-linux-musl)
+    fog-aws (3.30.0)
+      base64 (~> 0.2.0)
+      fog-core (~> 2.6)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+    fog-core (2.6.0)
+      builder
+      excon (~> 1.0)
+      formatador (>= 0.2, < 2.0)
+      mime-types
+    fog-json (1.2.0)
+      fog-core
+      multi_json (~> 1.10)
+    fog-xml (0.1.5)
+      fog-core
+      nokogiri (>= 1.5.11, < 2.0.0)
+    formatador (1.1.0)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -178,12 +196,17 @@ GEM
       net-smtp
     marcel (1.0.4)
     matrix (0.4.2)
+    mime-types (3.6.0)
+      logger
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2025.0204)
     mini_magick (5.1.2)
       benchmark
       logger
     mini_mime (1.1.5)
     minitest (5.25.4)
     msgpack (1.8.0)
+    multi_json (1.15.0)
     net-imap (0.5.6)
       date
       net-protocol
@@ -399,6 +422,7 @@ DEPENDENCIES
   debug
   devise
   dotenv-rails (~> 2.1, >= 2.1.1)
+  fog-aws
   importmap-rails
   jbuilder
   kamal
