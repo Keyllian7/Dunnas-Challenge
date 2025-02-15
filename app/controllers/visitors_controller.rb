@@ -17,9 +17,11 @@ class VisitorsController < ApplicationController
   def create
     @visitor = Visitor.new(visitor_params)
     if @visitor.save
+      flash[:notice] = 'Visitor created successfully'
       redirect_to visitors_path
     else
-      render :new, status: :unprocessable_entity
+      flash[:alert] = @visitor.errors.full_messages.to_sentence
+      render :new
     end
   end
 
@@ -28,14 +30,17 @@ class VisitorsController < ApplicationController
 
   def update
     if @visitor.update(visitor_params)
+      flash[:notice] = 'Visitor edited successfully'
       redirect_to visitors_path
     else
-      render :edit, status: :unprocessable_entity
+      flash[:alert] = @visitor.errors.full_messages.to_sentence
+      render :edit
     end
   end
 
   def destroy
     @visitor.destroy
+    flash[:notice] = 'Visitor deleted successfully'
     redirect_to visitors_path
   end
 
