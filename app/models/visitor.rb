@@ -1,6 +1,9 @@
 require 'br_documents'
 
 class Visitor < ApplicationRecord
+
+  before_validation :sanitize_cpf
+
   validates :name, presence: true
   validates :rg, presence: true, uniqueness: true
   validates :cpf, presence: true, uniqueness: true
@@ -14,11 +17,12 @@ class Visitor < ApplicationRecord
   validate :validate_cpf
   
   def validate_cpf
-
-    self.cpf = cpf.gsub(/\D/, '')
-
     unless BRDocuments::CPF.valid?(cpf)
-      errors.add(:cpf, 'CPF inválido')
+      errors.add(:cpf, 'Invalid or null cpf')
     end
+  end
+
+  def sanitize_cpf
+    self.cpf = cpf.gsub(/\D/, '')
   end
 end
