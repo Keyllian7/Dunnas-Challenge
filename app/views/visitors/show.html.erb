@@ -5,8 +5,8 @@
     <% if @visitor.photo? %>
         <%= image_tag @visitor.photo.url, class: "w-10 h-10 rounded-full border-2 border-white object-cover" %>
         <span class="text-sm text-gray-300"><%= @visitor.remote_photo_url %></span>
-        <p>Name: <%= @visitor.name %></p>
     <% end %>
+        <p class="text-lg text-gray-300 mb-2">Name: <%= @visitor.name %></p>
     </div>
 
     <p class="text-lg text-gray-300 mb-2">RG: <%= @visitor.rg %></p>
