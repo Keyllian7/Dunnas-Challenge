@@ -1,14 +1,36 @@
-<%= form_with model: @visit do |visit| %>
-    <div>
-        <p>Visitor: <%= visit.collection_select :visitor_id, Visitor.all, :id, :name %></p>
-        <p>Unit: <%= visit.collection_select :unit_id, Unit.all, :id, :name %></p>
-        <p>Sector: <%= visit.collection_select :sector_id, Sector.all, :id, :name %></p>
-        <p>Visit Date: <%= visit.datetime_field :date_time %></p>
-        <p>Functionario: <%= visit.collection_select :user_id, User.where(role: 2), :id, :name %></p>
-        <p>Status: <%= visit.select :status, Visit.statuses.keys.map { |s| [s.humanize, s] } %></p>
+<%= form_with model: @visit, class: "bg-gray-700 p-6 rounded-lg shadow-md" do |visit| %>
+    
+    <div class="mb-4">
+        <%= visit.label :visitor_id, "Visitor", class: "block text-white text-lg font-medium mb-2"%>
+        <%= visit.collection_select :visitor_id, Visitor.all, :id, :name, { prompt: "Select the visitor" }, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"%>
+    </div>
+
+    <div class="mb-4">
+        <%= visit.label :unit_id, "Unit", class: "block text-white text-lg font-medium mb-2"%>
+        <%= visit.collection_select :unit_id, Unit.all, :id, :name, { prompt: "Select the unit" }, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"%>
+    </div>
+
+    <div class="mb-4">
+        <%= visit.label :sector_id, "Sector", class: "block text-white text-lg font-medium mb-2"%>
+        <%= visit.collection_select :sector_id, Sector.all, :id, :name, { prompt: "Select the sector" }, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"%>
+    </div>
+
+    <div class="mb-4">
+        <%= visit.label :user_id, "Functionario", class: "block text-white text-lg font-medium mb-2"%>
+        <%= visit.collection_select :user_id, User.where(role:0), :id, :name, { prompt: "Select the functionario" }, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"%>
+    </div>
+
+    <div class="mb-4">
+        <%= visit.label :status, "Status", class: "block text-white text-lg font-medium mb-2"%>
+        <%= visit.select :status, Visit.statuses.keys.map { |s| [s.humanize, s] }, { prompt: "Select the status" }, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"%>
+    </div>
+
+    <div class="mb-4">
+        <%= visit.label :date_time, "Date e Time", class: "block text-white text-lg fontSelect-medium mb-2"%>
+        <%= visit.datetime_field :date_time, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
     </div>
 
     <div>
-        <%= visit.submit %>
+        <%= visit.submit "Save", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition"%>
     </div>
 <% end %>

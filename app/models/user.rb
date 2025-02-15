@@ -2,7 +2,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable, :confirmable
+    :recoverable, :rememberable, :validatable, :confirmable
 
   mount_uploader :photo, PhotoUploader
 
@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :unit_id, presence: false
   validates :sector_id, presence: false
 
-  enum :role, { employee: 0, attendant: 1, admin: 2 }
+  enum :role, {employee: 0, attendant: 1, admin: 2}
 
   belongs_to :unit, optional: true
   belongs_to :sector, optional: true

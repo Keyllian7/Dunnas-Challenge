@@ -1,8 +1,17 @@
-<h1>Visitor#index</h1>
-<p><% @visitors.each do |visitor|%></p>
-    <p>Name: <%= link_to visitor.name, visitor %></p>  
-<% end %>
+<div class="max-w-4xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+  <h1 class="text 3xl font-bold mb-6">Visitors</h1>
 
-<% if can? :manage, Visitor %>
-  <%= link_to 'New visitor', new_visitor_path %>
-<% end %>
+  <div class="space-y-4"id="units">
+  <% @visitors.each do |visitor|%>
+    <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
+      <%= link_to visitor.name, visitor, class: "text-lg font-medium text-blue-400 hover:underline" %>
+    </div>  
+  <% end %>
+  </div>
+
+  <% if can? :manage, Visitor %>
+    <div class="mt-6">
+      <%= link_to 'New Visitor', new_visitor_path, class: "bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
+    </div>
+  <% end %>
+</div>

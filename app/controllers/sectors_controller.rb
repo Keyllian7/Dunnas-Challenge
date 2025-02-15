@@ -1,7 +1,7 @@
 class SectorsController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
-  before_action :set_sector, only: [ :edit, :update, :show, :destroy ]
+  before_action :set_sector, only: [:edit, :update, :show, :destroy]
 
   def index
     @sectors = Sector.all
@@ -42,7 +42,7 @@ class SectorsController < ApplicationController
   private
 
   def sector_params
-    params.expect(sector: [ :name, :unit_id ])
+    params.expect(sector: [:name, :unit_id])
   end
 
   def set_sector

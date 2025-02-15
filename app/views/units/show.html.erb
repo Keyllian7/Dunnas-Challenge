@@ -1,8 +1,13 @@
-<h1>Name: <%= @unit.name %></h1>
-<p>Email: <%= @unit.email %></p>
+<div class="max-w-2xl mx-auto bg-gray-800 text-white p-6 shadow-md rounded-lg mt-6">
+    <h1 class="text-2xl font-bold mb-4">Unit data</h1>
+    <p class="text-lg text-gray-300 mb-2">Name: <%= @unit.name %></p>
+    <p class="text-lg text-gray-300 mb-2">Email: <%= @unit.email %></p>
 
-<%= link_to 'Back', units_path %>
-<% if can? :manage, Unit %>
-    <%= link_to 'Edit unit', edit_unit_path(@unit)%>
-    <%= button_to "Delete", @unit, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-<% end %>
+    <div class="flex space-x-4">
+        <%= link_to 'Back', units_path, class: "bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg transition" %>
+        <% if can? :manage, Unit %>
+            <%= link_to 'Edit unit', edit_unit_path(@unit), class: "bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition"%>
+            <%= button_to "Delete", @unit, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition" %>
+        <% end %>
+    </div>
+</div>
