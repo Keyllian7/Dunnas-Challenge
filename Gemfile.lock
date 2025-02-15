@@ -85,6 +85,8 @@ GEM
       msgpack (~> 1.2)
     brakeman (7.0.0)
       racc
+    brazilian_documents (0.1.8)
+      digit_checksum (~> 0.2.3)
     builder (3.3.0)
     cancancan (3.6.1)
     capybara (3.40.0)
@@ -117,6 +119,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    digit_checksum (0.2.3)
     dotenv (2.8.1)
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
@@ -424,6 +427,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   brakeman
+  brazilian_documents (~> 0.1.4)
   cancancan
   capybara
   carrierwave (~> 2.0)
