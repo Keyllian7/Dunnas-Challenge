@@ -1,4 +1,12 @@
-<h1>Units#edit</h1>
+<div class="max-w-3xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+    <h1 class="text-3xl font-bold mb-6">Edit Unit</h1>
 
-<%= render "form", unit: @unit %>
-<%= link_to 'Cancel', unit_path %>
+    <div class="mb-6">
+        <%= render "form", unit: @unit %>
+    </div>
+
+    <div class="mb-4">
+        <%= link_to 'Cancel', unit_path, class: "bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg transition" %>
+    </div>
+
+</div>
