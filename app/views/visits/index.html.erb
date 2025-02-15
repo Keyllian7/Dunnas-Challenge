@@ -1,12 +1,17 @@
-<h1>Visit#index</h1>
+<div class="max-w-4xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+  <h1 class="text 3xl font-bold mb-6">Visits</h1>
 
-<h1>Visit</h1>
+  <div class="space-y-4"id="visits">
+    <% @visits.each do |visit|%>
+      <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
+        <%= link_to visit.date_time, visit, class: "text-lg font-medium text-blue-400 hover:underline" %>
+      </div>
+    <%end%>
+  </div>
 
-<% @visits.each do |visit|%>
-    <p><%= link_to visit.date_time, visit %></p>
-<%end%>
-
-
-<% if can? :manage, Visit %>
-  <%= link_to 'New visit', new_visit_path %>
-<% end %>
+  <% if can? :manage, Visit %>
+    <div class="mt-6">
+      <%= link_to 'New Visit', new_visit_path, class: "bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
+    </div>
+  <% end %>
+</div>

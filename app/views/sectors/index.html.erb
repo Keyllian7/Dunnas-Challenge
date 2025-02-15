@@ -1,14 +1,17 @@
-<h1>Sector#index</h1>
+<div class="max-w-4xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+  <h1 class="text 3xl font-bold mb-6">Sector</h1>
 
-<h1>Sectors</h1>
-<div id="units">
-  <% @sectors.each do |sector| %>
-    <div>
-    <%= link_to sector.name, sector %>  
-    </div>
-    <% end %>
-</div>
+  <div class="space-y-4" id="sectors">
+    <% @sectors.each do |sector| %>
+      <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
+      <%= link_to sector.name, sector, class: "text-lg font-medium text-blue-400 hover:underline" %>  
+      </div>
+      <% end %>
+  </div>
 
-<% if can? :manage, Sector %>
-  <%= link_to 'New Sector', new_sector_path %>
+  <% if can? :manage, Sector %>
+  <div class="mt-6">
+    <%= link_to 'New Sector', new_sector_path, class: "bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
+  </div>
 <% end %>
+</div>
