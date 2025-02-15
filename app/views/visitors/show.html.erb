@@ -1,14 +1,25 @@
-<% if @visitor.photo? %>
-    <p>Current photo:</p>
-    <%= image_tag @visitor.photo.url, whidt: 100, height: 100, class: "rounded-circle"%>
-<% end %>
-<p>Name: <%= @visitor.name %></p>
-<p>RG: <%= @visitor.rg %></p>
-<p>CPF: <%= @visitor.cpf %></p>
-<p>telephone: <%= @visitor.telephone %></p>
+<div class="max-w-2xl mx-auto bg-gray-800 text-white p-6 shadow-md rounded-lg mt-6">
+    <h1 class="text-2xl font-bold mb-4">Visitor data</h1>
 
-<%= link_to 'Back', visitors_path %>
-<% if can? :manage, Visitor %>
-    <%= link_to "Update", edit_visitor_path%>
-    <%= button_to "Delete", @visitor, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-<% end %>
+    <div class="flex items-center space-x-2">
+    <% if user_signed_in? %>
+        <%= link_to (image_tag @visitor.photo.url, class: "w-10 h-10 rounded-full border-2 border-white object-cover"), edit_user_registration_path %>
+        <span class="text-sm text-gray-300"><%= @visitor.remote_photo_url %></span>
+        <p>Name: <%= @visitor.name %></p>
+    <% end %>
+    </div>
+
+    <p class="text-lg text-gray-300 mb-2">RG: <%= @visitor.rg %></p>
+    <p class="text-lg text-gray-300 mb-2">CPF: <%= @visitor.cpf %></p>
+    <p class="text-lg text-gray-300 mb-2">Telephone: <%= @visitor.telephone %></p>
+
+    <div class="flex space-x-4">
+        <%= link_to 'Back', visitors_path, class: "bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg transition" %>
+
+        <% if can? :manage, Visitor %>
+            <%= link_to "Update", edit_visitor_path, class: "bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition"%>
+            <%= button_to "Delete", @visitor, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition" %>
+        <% end %>
+    </div>
+    
+</div>

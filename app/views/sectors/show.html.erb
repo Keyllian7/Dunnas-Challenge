@@ -1,10 +1,16 @@
-<h1>Sector</h1>
+<div class="max-w-2xl mx-auto bg-gray-800 text-white p-6 shadow-md rounded-lg mt-6">
+<h1 class="text-2xl font-bold mb-4">Sector data</h1>
+<h1 class="text-lg text-gray-300 mb-2">Sector name: <%= @sector.name%></h1>
+<p class="text-lg text-gray-300 mb-2">Unit belonging to: <%= link_to @sector.unit.name, unit_path(@sector.unit.id), class: "hover:underline text-blue-400"%></p>
 
-<h4>Nome do setor: <%= @sector.name%></h4>
-<p>Unidade pertencente: <%= @sector.unit.name%></p>
+<div class="flex space-x-4">
+    <%= link_to 'Back', sectors_path, class: "bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg transition" %>
 
-<%= link_to 'Back', sectors_path %>
-<% if can? :manage, Sector %>
-    <%= button_to "Delete", @sector, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-    <%= link_to 'Edit sector', edit_sector_path(@sector)%>
-<% end %>
+    <% if can? :manage, Sector %>
+        <%= link_to 'Edit sector', edit_sector_path(@sector), class: "bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition" %>
+        <%= button_to "Delete", @sector, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition" %>
+    <% end %>
+
+    </div>
+</div>
+</div>

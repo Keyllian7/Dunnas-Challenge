@@ -1,15 +1,19 @@
-<h1>Visit</h1>
+<div class="max-w-2xl mx-auto bg-gray-800 text-white p-6 shadow-md rounded-lg mt-6">
+    <h1 class="text-2xl font-bold mb-4">Visit data</h1>
+    <p class="text-lg text-gray-300 mb-2">Visitor name: <%= link_to @visit.visitor.name, visitor_path(@visit.visitor.id), class: "hover:underline text-blue-400"%></p>
+    <p class="text-lg text-gray-300 mb-2">Unit: <%= link_to @visit.unit.name, unit_path(@visit.unit.id), class: "hover:underline text-blue-400"%></p>
+    <p class="text-lg text-gray-300 mb-2">Sector: <%= link_to @visit.sector.name, sector_path(@visit.sector.id), class: "hover:underline text-blue-400"%></p>
+    <p class="text-lg text-gray-300 mb-2">Functionario: <%= @visit.user.name %></p>
+    <p class="text-lg text-gray-300 mb-2">Visit Date: <%= @visit.date_time%></p>
+    <p class="text-lg text-gray-300 mb-2">Status: <%= @visit.status%></p>
 
-<h4>Visitor <%= link_to @visit.visitor.name, visitor_path(@visit.visitor.id)%></h4>
-<p>Unit: <%= link_to @visit.unit.name, unit_path(@visit.unit.id)%></p>
-<p>Sector: <%= link_to @visit.sector.name, sector_path(@visit.sector.id)%></p>
-<p>Functionario: <%= @visit.user.name %></p>
-<p>Visit Date: <%= @visit.date_time%></p>
-<p>Status: <%= @visit.status%></p>
+    <div class="flex space-x-4">
+        <%= link_to 'Back', visits_path, class: "bg-gray-600 hover:bg-gray-700 px-4 py-2 rounded-lg transition" %>
 
-<%= link_to 'Back', visits_path %>
+        <% if can? :manage, Visit %>
+            <%= link_to "Edit vist", edit_visit_path, class: "bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-lg transition"%>
+            <%= button_to "Delete", @visit, method: :delete, data: { turbo_confirm: "Are you sure?" }, class: "bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition" %>
+        <% end %>
+    </div>
 
-<% if can? :manage, Visit %>
-    <%= link_to "Edit vist", edit_visit_path%>
-    <%= button_to "Delete", @visit, method: :delete, data: { turbo_confirm: "Are you sure?" } %>
-<% end %>
+</div>
