@@ -17,7 +17,11 @@ Rails.application.routes.draw do
 
   resources :units
   resources :sectors
-  resources :visitors
+  resources :visitors do
+    collection do
+      post :verify_by_cpf
+    end
+  end
   resources :visits
 
   root "web#index"

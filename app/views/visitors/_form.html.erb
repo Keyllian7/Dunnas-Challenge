@@ -1,4 +1,19 @@
-<%= form_with model: @visitor, class: "bg-gray-700 p-6 rounded-lg shadow-md" do |visitor| %>
+<% @show_form = flash[:show_form] %>
+<% @cpf = flash[:cpf_data]%>
+
+<%= form_with url: verify_by_cpf_visitors_path, method: :post, class: "bg-gray-700 p-6 rounded-lg shadow-md #{'hidden' if @show_form}" do |visitor| %>
+    <div class="mb-4">
+        <%= visitor.label :cpf, class: "block text-white text-lg font-medium mb-2" %>
+        <%= visitor.text_field :cpf, name: "visitor[cpf]", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%><br>
+    </div>
+
+    <div>
+        <%= visitor.submit "Verify", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition" %>
+    </div>
+<% end %>
+
+
+<%= form_with model: @visitor, class: "bg-gray-700 p-6 rounded-lg shadow-md #{'hidden' unless @show_form}" do |visitor| %>
     <div class="mb-4">
         <%= visitor.label :name, class: "block text-white text-lg font-medium mb-2" %>
         <%= visitor.text_field :name, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %><br>
@@ -6,7 +21,7 @@
 
     <div class="mb-4">
         <%= visitor.label :cpf, class: "block text-white text-lg font-medium mb-2" %>
-        <%= visitor.text_field :cpf, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%><br>
+        <%= visitor.text_field :cpf, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none ", placeholder: @cpf, readonly: true, value: @cpf%><br>
     </div>
 
     <div class="mb-4">
