@@ -16,12 +16,20 @@ class VisitorsController < ApplicationController
 
   def create
     @visitor = Visitor.new(visitor_params)
+    cpf_clean = @visitor.cpf.gsub(/\D/, '')
+    visitor_exist = Visitor.find_by(cpf: cpf_clean)
+    if visitor_exist.present?
+      flash[:alert] = 'Visitor already exists'
+      redirect_to visitor_path(visitor_exist)
+      return
+    end
+    
     if @visitor.save
       flash[:notice] = 'Visitor created successfully'
       redirect_to visitors_path
     else
       flash[:alert] = @visitor.errors.full_messages.to_sentence
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -34,7 +42,7 @@ class VisitorsController < ApplicationController
       redirect_to visitors_path
     else
       flash[:alert] = @visitor.errors.full_messages.to_sentence
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
