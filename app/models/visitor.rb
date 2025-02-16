@@ -8,7 +8,7 @@ class Visitor < ApplicationRecord
   validates :rg, presence: true, uniqueness: true
   validates :cpf, presence: true, uniqueness: true
   validates :telephone, presence: true, phone: true
-  validates :photo, presence: false
+  validates :photo, presence: true
   
   mount_uploader :photo, PhotoUploader
   

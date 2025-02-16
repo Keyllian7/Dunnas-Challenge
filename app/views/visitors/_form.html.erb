@@ -31,7 +31,7 @@
 
     <div class="mb-4">
         <%= visitor.label :telephone, class: "block text-white text-lg font-medium mb-2" %>
-        <%= visitor.telephone_field :telephone, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%><br>
+        <%= visitor.telephone_field :telephone, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none ", oninput: "this.value = this.value.replace(/[^0-9]/g, '')"%><br>
     </div>
 
     <% if @visitor.photo? %>

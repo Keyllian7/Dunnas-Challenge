@@ -46,14 +46,14 @@ class VisitorsController < ApplicationController
 
   def create
     @visitor = Visitor.new(visitor_params)
-
-    
     
     if @visitor.save
       flash[:notice] = 'Visitor created successfully'
       redirect_to visitors_path
     else
       flash[:alert] = @visitor.errors.full_messages.to_sentence
+      flash[:cpf_data] = @visitor.cpf
+      flash[:show_form] = true
       render :new, status: :unprocessable_entity
     end
   end
