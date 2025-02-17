@@ -72,6 +72,12 @@ Os estilos globais do Tailwind CSS são importados no arquivo application.css:
 ```
 Para mais informações sobre como utilizar o Tailwind CSS, consulte a [documentação oficial](https://tailwindcss.com/docs).
 
+### Rubocop
+por padrao o linter rubocop já vem configurado em um projeto rails, mas com configurações basicas,usei essse repositorio com as configurações avançadas de linter recomendadas para projetos rails
+https://github.com/standardrb/standard/blob/main/config/base.yml
+
+se quiser as configurações, basta copiar esse arquivo base.yml e colcar no seu .rubucop.yml na raiz do projeto
+
 ## Ferramentas que usei
 Dockeer e o serviço web portainer
 git/github
@@ -98,7 +104,14 @@ draw.io para entender o projeto e modelar algumas coisas
 - **phonelib**: Validação de números de telefone.
 - **puma (>= 5.0)**: Servidor web.
 
-### Documentações usadas para o desenvolvimento
+# Materias de apoio usadas para o desenvolvimento
+
+### Youtuber
+um canal que me ajudou bastante nesse processo tamém foi o RailsGO
+https://www.youtube.com/@GorailsTV
+
+### Documentações
+
 https://github.com/CanCanCommunity/cancancan
 https://github.com/carrierwaveuploader/carrierwave
 https://github.com/daddyz/phonelib
@@ -109,6 +122,7 @@ https://github.com/fidelisrafael/brazilian_documents
 https://guides.rubyonrails.org/getting_started.html#controllers-actions
 https://www.ruby-lang.org/pt/documentation/
 https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia - documeraçaõ para o uso da webcam no navegador
+https://github.com/standardrb/standard
 
 ### Serviço de Email
 
