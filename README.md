@@ -337,6 +337,28 @@ bin/rails db:migrate
 bin/rails db:seed - por padrão deixei um usuario com credenciais de administrador registrado, execute antes para poder fazer o primeiro login, sem isso voce nao ira conseguir
 ```
 
+o comando seed acima vai gerar um usuario admin com essas informações, mas antes de executar, va ao model de user e desative a validação de foto, execute e reative a validação de photo, isso é um bug que não consegui resolver ate o momento por conta que para resolver tenho que usar outra biblioteca para upload de fotos
+
+p arquivo está em: app/models/user.rb
+```sh
+  validates :photo, presence: true
+```
+
+mude para false, execute, defina como true
+
+```sh
+  email: keyllianazevedo2@gmail.com
+  password: "123456",
+  password_confirmation: "123456",
+  confirmed_at: Time.now,
+  role: 2,
+  cpf: "24327784052", # CPF gerado pelo site https://www.4devs.com.br/gerador_de_cpf
+  rg: "123456789",
+  name: "Keyllian Azevedo",
+  telephone: "55 92 36170584", # Telefone gerado pelo site https://geradornv.com.br/gerador-telefone/
+```
+
+
 ### Executando o Projeto
 
 Para executar o projeto localmente, utilize o Docker Compose:
