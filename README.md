@@ -1,132 +1,145 @@
 # Sistema de Controle de Entrada de Visitantes
 
-### Antes de qualquer coisa, leia..
+## 📚 Antes de qualquer coisa, leia...  
 
-Eu aprendi a sintaxe do ruby e o freamework ruby on rails e desenvolvi esse projeto em um perido de 7 dias, fiz tudo isso em lives no youtube, durante os 7 dias realizamos por volta de 20 lives (ate o momento) acumulei cerca de 70 horas de live, uma media de 10 horas por dia nesse projeto. por ser um freamwork e linaguem novo para mim, é evidente que não tenho total dominio sobre o freamwork, mas durante esse perido com todas essas horas de dedicação a esse desafio, esse projeto eu pude aplicar nao so conhecimnentos externos mas também de boas praticas
+Eu aprendi a sintaxe do Ruby e o framework Ruby on Rails e desenvolvi este projeto em um período de 7 dias. Fiz tudo isso em lives no YouTube, e, ao longo desses 7 dias, realizamos cerca de 20 transmissões (até o momento), acumulando aproximadamente 70 horas de live, uma média de 10 horas por dia dedicadas a este projeto.  
 
-se voce quiser pdoe acessar a playlist de lives desse projeto no meu canal do youtube:
-https://youtube.com/playlist?list=PLPFcnwFvZAMZfgLLpt17qpilg_pPwBkm4&si=VbrqY8WBIm2ix5x9
+Por ser um framework e uma linguagem novos para mim, é evidente que ainda não tenho total domínio sobre o Ruby on Rails. No entanto, com toda essa dedicação ao desafio, pude aplicar não só conhecimentos externos, mas também boas práticas de desenvolvimento.  
 
-link do canal:
-https://www.youtube.com/@DevKeyllian
+Se quiser acompanhar o processo, você pode acessar a playlist das lives deste projeto no meu canal do YouTube:  
+**Playlist das Lives:** [Lives](https://youtube.com/playlist?list=PLPFcnwFvZAMZfgLLpt17qpilg_pPwBkm4&si=VbrqY8WBIm2ix5x9)  
+**Canal no YouTube:** [Canal](https://www.youtube.com/@DevKeyllian)  
 
-## Descrição desse projeto
+## 💪 Desafio Proposto
 
-Este projeto é um sistema para armazenar registros de entradas de pessoas (visitantes) que frequentam uma unidade específica de uma instituição. Ele inclui várias funcionalidades, como autenticação de usuários, autorização, upload de arquivos, e muito mais.
+### Objetivo do Projeto  
 
-### Desafio proposto
+O sistema tem como objetivo armazenar os registros de entradas de pessoas (visitantes) que frequentam uma determinada unidade de uma instituição.
 
-Controle de Entrada
-O sistema tem como objetivo armazenar os registros de entradas de pessoas (visitantes) que
-frequentam uma determinada unidade de uma instituição.
-A instituição possui varias unidades e cada unidade armazena apenas os dados de visita da
-sua unidade. Porém, compartilham do cadastro dos visitantes afim de agilizar o processo.
-Cada unidade possui vários setores com seus respectivos funcionários, os quais deveram ser
-informados no momento do registro da visita.
-O registro da visita deverá solicitar os seguintes dados do visitante: CPF, nome, RG,
-telefone e foto (webcam). Caso o visitante já tenha sido cadastrado anteriormente, ao preencher o
-CPF, o sistema deve consultar e apresentar os dados do visitante. E solicitar que informe o setor e
-funcionário (opcional) ao qual será feita a visita. Ao final o sistema deve registrar a data e hora da
-visita.
-O sistema deve possuir 3 níveis de permissão de usuário, Administrador que poderá
-cadastrar as unidades, setores, funcionários e os usuários; Atendente que será responsável pelo
-cadastro do visitante e registro das visitas apenas de sua unidade; e Funcionário que poderá
-visualizar a lista de visitantes que estão aguardando, bem como notificar ao sistema sobre a
-realização da visita. O sistema deve exibir as funcionalidades conforme a permissão de cada
-usuário.
+### Funcionalidades principais:  
 
-Sistema web;
-Padrão de arquitetura MVC (Ruby on Rails)
+- **Cadastro de visitantes**: Solicita informações como CPF, nome, RG, telefone e foto (webcam).  
+- **Consulta de visitantes**: Se o visitante já estiver cadastrado, ao preencher o CPF, o sistema preenche os dados automaticamente.  
+- **Registro de visita**: Solicita o setor e o funcionário (opcional) ao qual a visita será realizada, e registra a data e hora da entrada.  
 
-Ruby on Rails:
- Linguagem Ruby;
- Framework Ruby on Rails;
- Utilizar a gem Devise para autenticação;
- Utilizar a gem Cancancan para autorização;
+### Estrutura da Instituição:  
+- A instituição possui **várias unidades**, sendo que cada unidade armazena apenas os dados das visitas realizadas nela, mas compartilha o cadastro dos visitantes para agilizar o processo.  
+- **Setores e Funcionários**: Cada unidade possui vários setores e funcionários, que devem ser informados no momento do registro de uma visita.  
 
+### Níveis de Permissão de Usuário:  
+- **Administrador**: Pode cadastrar unidades, setores, funcionários e usuários.  
+- **Atendente**: Responsável pelo cadastro de visitantes e registro de visitas apenas na sua unidade.  
+- **Funcionário**: Pode visualizar a lista de visitantes aguardando e notificar o sistema sobre a realização da visita.  
+- O sistema exibe as funcionalidades conforme a permissão de cada usuário.  
 
-## Tecnologias Utilizadas
+### Tecnologias e Ferramentas Utilizadas:  
+- **Sistema Web**  
+- **Arquitetura MVC** com Ruby on Rails  
+- **Ruby** como linguagem de programação  
+- **Devise** para autenticação de usuários  
+- **Cancancan** para controle de permissões de usuários  
 
-### Ruby on Rails
+## ⚙️ Tecnologias Utilizadas  
 
-O projeto é construído usando Ruby on Rails, uma framework web popular para desenvolvimento de aplicações web.
+### Ruby on Rails  
+O projeto é desenvolvido utilizando **Ruby on Rails**, uma framework web popular para construção de aplicações web de forma rápida e eficiente.
 
-### Tailwind CSS
+### Tailwind CSS  
+Este projeto utiliza o [**Tailwind CSS**](https://tailwindcss.com/) para a estilização. O Tailwind é um framework CSS utilitário que permite criar designs modernos e responsivos de maneira prática e ágil.
 
-Este projeto utiliza [Tailwind CSS](https://tailwindcss.com/) para a estilização. Tailwind CSS é um framework de CSS utilitário que permite criar designs modernos e responsivos de forma rápida e eficiente.
-
-### Configuração do Tailwind CSS
-
-O Tailwind CSS está configurado no arquivo [Procfile.dev](Procfile.dev) para ser observado e recompilado automaticamente durante o desenvolvimento:
+#### Configuração do Tailwind CSS  
+O Tailwind CSS está configurado no arquivo **[Procfile.dev](Procfile.dev)** para ser observado e recompilado automaticamente durante o desenvolvimento. A configuração é a seguinte:
 
 ```dev
 web: bin/rails server
 css: bin/rails tailwindcss:watch
 ```
-### Arquivo de Estilos
 
-Os estilos globais do Tailwind CSS são importados no arquivo application.css:
+#### Arquivo de Estilos  
+Os estilos globais do Tailwind CSS são importados no arquivo **application.css**:
 
 ```css
 @import "tailwindcss";
 ```
+
 Para mais informações sobre como utilizar o Tailwind CSS, consulte a [documentação oficial](https://tailwindcss.com/docs).
 
-### Rubocop
-por padrao o linter rubocop já vem configurado em um projeto rails, mas com configurações basicas,usei essse repositorio com as configurações avançadas de linter recomendadas para projetos rails
-https://github.com/standardrb/standard/blob/main/config/base.yml
+### Rubocop  
+Por padrão, o **Rubocop** já vem configurado em projetos Rails, mas com configurações básicas. Para melhorar a qualidade do código, utilizei um repositório com configurações avançadas de linter recomendadas para projetos Rails.
 
-se quiser as configurações, basta copiar esse arquivo base.yml e colcar no seu .rubucop.yml na raiz do projeto
+Repositório: [Standard Ruby](https://github.com/standardrb/standard/blob/main/config/base.yml)
 
-## Ferramentas que usei
-Dockeer e o serviço web portainer
-git/github
-DBaver
-Vscode
-terminal (linux)
-dbdiagram.io para modelagem do banco de dados
-IA - para duvidas, entender erros, exemplos e ect, mas NUNCA para ejetar de codigo no projeto, vou falar mias no toripo IA no projeto
-notion, para anotaçẽos, metas e outros
-draw.io para entender o projeto e modelar algumas coisas
+Se quiser as configurações avançadas, basta copiar o arquivo **base.yml** e colocá-lo no seu **.rubocop.yml** na raiz do projeto.
 
+## 🛠️ Ferramentas Utilizadas  
 
-### Principais Gems Utilizadas
+### Docker & Portainer  
+- **Docker** foi utilizado para criar contêineres no ambiente de desenvolvimento, garantindo um processo de configuração e execução mais eficiente.
+- **Portainer** foi adotado como interface web para gerenciar os contêineres Docker de maneira visual e intuitiva.
 
-- **rails (~> 8.0.1)**: Framework principal para desenvolvimento web.
-- **pg (~> 1.5, >= 1.5.6)**: Utilizado para o banco de dados PostgreSQL.
-- **dotenv-rails (~> 2.1, >= 2.1.1)**: Carrega variáveis de ambiente a partir de um arquivo .env.
-- **devise**: Autenticação de usuários.
-- **cancancan**: Autorização de usuários.
-- **carrierwave (~> 2.0)**: Upload de arquivos.
-- **mini_magick**: Processamento de imagens.
-- **fog-aws**: Armazenamento de arquivos na AWS S3.
-- **brazilian_documents (~> 0.1.4)**: Validação de documentos brasileiros.
-- **phonelib**: Validação de números de telefone.
-- **puma (>= 5.0)**: Servidor web.
+### Git & GitHub  
+- **Git** foi utilizado para o controle de versão do projeto.
+- **GitHub** foi a plataforma escolhida para hospedar o repositório e possibilitar a colaboração.
 
-# Materias de apoio usadas para o desenvolvimento
+### DBeaver  
+- **DBeaver** foi utilizado para o gerenciamento e manipulação do banco de dados, oferecendo uma interface gráfica que facilita o gerenciamento das tabelas e dados.
 
-### Youtuber
-um canal que me ajudou bastante nesse processo tamém foi o RailsGO
-https://www.youtube.com/@GorailsTV
+### VSCode  
+- **Visual Studio Code (VSCode)** foi a principal IDE utilizada no desenvolvimento do código, com suporte a diversas extensões que aumentam a produtividade e eficiência.
 
-### Documentações
+### Terminal (Linux)  
+- O **terminal Linux** foi amplamente utilizado para realizar operações no sistema, além de interagir diretamente com o projeto.
 
-https://github.com/CanCanCommunity/cancancan
-https://github.com/carrierwaveuploader/carrierwave
-https://github.com/daddyz/phonelib
-https://github.com/heartcombo/devise
-https://github.com/bkeepers/dotenv
-https://tailwindui.com/
-https://github.com/fidelisrafael/brazilian_documents
-https://guides.rubyonrails.org/getting_started.html#controllers-actions
-https://www.ruby-lang.org/pt/documentation/
-https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia - documeraçaõ para o uso da webcam no navegador
-https://github.com/standardrb/standard
+### DBdiagram.io  
+- Utilizei o **dbdiagram.io** para modelar o banco de dados, criando diagramas relacionais que ajudam a visualizar a estrutura e as interações entre as tabelas.
 
-### Serviço de Email
+### Inteligência Artificial  
+- A **Inteligência Artificial** foi utilizada para esclarecer dúvidas, analisar erros, buscar exemplos e outras finalidades de suporte. **NUNCA** foi utilizada para escrever código diretamente no projeto.
+### Notion  
+- O **Notion** foi utilizado para anotações, definição de metas, organização de ideias e planejamento geral do projeto.
 
-O projeto utiliza o Action Mailer para enviar emails dos serviços da gen Devise, escolhi o serviço do gmail para isso. A configuração do serviço está no arquivo development.rb:
+### Draw.io  
+- Utilizei o **Draw.io** para compreender melhor o projeto e criar modelos, como fluxos de dados e diagramas de arquitetura.
+
+## 🔧 Principais Gems Utilizadas  
+
+- **rails (~> 8.0.1)**: Framework principal para o desenvolvimento de aplicações web.
+- **pg (~> 1.5, >= 1.5.6)**: Gem para integração com o banco de dados **PostgreSQL**.
+- **dotenv-rails (~> 2.1, >= 2.1.1)**: Carrega variáveis de ambiente a partir de um arquivo **.env**.
+- **devise**: Gem para autenticação de usuários.
+- **cancancan**: Gem para controle de permissões e autorização de usuários.
+- **carrierwave (~> 2.0)**: Responsável pelo **upload de arquivos**.
+- **mini_magick**: Utilizada para o **processamento de imagens**.
+- **fog-aws**: Gem para **armazenamento de arquivos na AWS S3**.
+- **brazilian_documents (~> 0.1.4)**: Valida documentos brasileiros, como **CPF** e **RG**.
+- **phonelib**: Realiza a **validação de números de telefone**.
+- **puma (>= 5.0)**: Servidor web utilizado para rodar a aplicação.
+
+## 📚 Materiais de Apoio Utilizados para o Desenvolvimento  
+
+### YouTube  
+Um canal que me ajudou bastante durante o processo foi o **RailsGO**. Recomendo a todos que estão aprendendo Ruby on Rails!  
+[RailsGO no YouTube](https://www.youtube.com/@GorailsTV)
+
+### Documentações  
+
+- [**Cancancan**](https://github.com/CanCanCommunity/cancancan) - Gem para controle de permissões e autorização de usuários.  
+- [**Carrierwave**](https://github.com/carrierwaveuploader/carrierwave) - Gem para upload de arquivos.  
+- [**Phonelib**](https://github.com/daddyz/phonelib) - Gem para validação de números de telefone.  
+- [**Devise**](https://github.com/heartcombo/devise) - Gem para autenticação de usuários.  
+- [**dotenv**](https://github.com/bkeepers/dotenv) - Gem para carregar variáveis de ambiente.  
+- [**Tailwind UI**](https://tailwindui.com/) - Recursos e componentes prontos para o Tailwind CSS.  
+- [**Brazilian Documents**](https://github.com/fidelisrafael/brazilian_documents) - Validação de documentos brasileiros.  
+- [**Getting Started with Rails**](https://guides.rubyonrails.org/getting_started.html#controllers-actions) - Guia oficial para começar com Rails.  
+- [**Ruby Documentation**](https://www.ruby-lang.org/pt/documentation/) - Documentação oficial da linguagem Ruby.  
+- [**Webcam API - MDN**](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia) - Documentação sobre o uso da webcam no navegador.  
+- [**Standard Ruby**](https://github.com/standardrb/standard) - Repositório com configurações de linter para Ruby.
+
+## 💼 Serviços
+
+### Serviço de E-mail  
+
+O projeto utiliza o **Action Mailer** para enviar e-mails pelos serviços da gem **Devise**. Para isso, escolhi o serviço do **Gmail**. A configuração do serviço de e-mail está no arquivo `development.rb`:
 
 ```rb
 config.action_mailer.delivery_method = :smtp
@@ -141,9 +154,11 @@ config.action_mailer.smtp_settings = {
 }
 ```
 
-### Serviço AWS
+Aqui, as credenciais de e-mail são carregadas a partir das variáveis de ambiente, garantindo a segurança das informações sensíveis.
 
-O projeto utiliza o AWS S3 para armazenamento de fotos dos visitantes e de usuarios. A configuração está no arquivo carrierwave.rb:
+### Serviço AWS  
+
+O projeto utiliza o **AWS S3** para armazenamento de fotos dos visitantes e usuários. A configuração do serviço está no arquivo `carrierwave.rb`, que utiliza a gem **CarrierWave** para integrar o armazenamento no S3:
 
 ```rb
 CarrierWave.configure do |config|
@@ -161,9 +176,14 @@ CarrierWave.configure do |config|
 end
 ```
 
-### Docker
+As credenciais de acesso à AWS também são carregadas a partir das variáveis de ambiente para garantir a segurança das informações sensíveis.
 
-O projeto está configurado para ser executado em containers Docker. O arquivo Dockerfile contém a configuração necessária:
+### Docker  
+
+O projeto está configurado para ser executado em **containers Docker**. Abaixo está a configuração necessária para rodar a aplicação em um ambiente isolado.
+
+#### Dockerfile  
+O arquivo **Dockerfile** contém a configuração para a criação da imagem Docker:
 
 ```dockerfile
 FROM ruby:3.2.0
@@ -187,7 +207,8 @@ EXPOSE 3000
 CMD ["bash", "-c", "rm -f tmp/pids/server.pid && bundle exec rails server -b '0.0.0.0'"]
 ```
 
-O arquivo docker-compose.yml é utilizado organizar os containers:
+#### docker-compose.yml  
+O arquivo **docker-compose.yml** é utilizado para organizar os containers, definindo as configurações de rede e volumes:
 
 ```yml
 version: '3'
@@ -228,107 +249,102 @@ volumes:
 
 networks:
   app-network:
-
 ```
 
-## Configuração
+#### Explicação:
+- **Dockerfile**: Define a construção da imagem Docker, incluindo dependências necessárias e a execução do servidor Rails.
+- **docker-compose.yml**: Configura os containers para o banco de dados (PostgreSQL) e o servidor web (Rails), garantindo que ambos compartilhem a mesma rede e volumes persistentes.
 
-### Variáveis de Ambiente
+## 🔒 Permissões  
 
-Crie um arquivo .env na raiz do projeto e adicione as seguintes variáveis de ambiente, não considere os valores apos o sinal de =, são apenas uma breve explicaçaõ do papel de cada valor:
+As permissões no sistema são baseadas em **roles** (funções) dos usuários, e os valores para cada role são os seguintes:
+- **0** = **employee** (funcionário)
+- **1** = **attendant** (atendente)
+- **2** = **admin** (admin)
 
-```
-POSTGRES_USER=seu usuario no banco de dados
-POSTGRES_PASSWORD=sua senha do banco de dados
-POSTGRES_DB=seu nome do banco de dados
-DATABASE_HOST=onde esta sendo hosteado o seu banco, normalmente localhost
-EMAIL_GMAIL=seu email do gmail para o serviço 
-PASSWORD_GMAIL=sua senha de aplicativos do gmail, para cria-lá, e necessario autenticação de dois fatores na conta
-AWS_ACCESS_KEY_ID=sua chave de acesso na aws
-AWS_SECRET_ACCESS_KEY=sua senha secreta na aws
-AWS_BUCKET_NAME=o nome do seu bucket na aws
-AWS_REGION=região do seu bucket na aws
+A gem **CanCanCan** é usada para configurar as permissões dos usuários. Você pode encontrar o arquivo de permissões completo em `app/models/ability.rb`.
 
-```
-## Permissões
+### Exemplo de Configuração de Permissões:
 
-as permissẽos são baseadas no roles e usuario
-0 = employee (funcionario)
-1 = attendant (atendente)
-2 = admin (admin)
-
-usamos a gem cancan para configurar as permissões dos usuarios, voce pode encontrar o arquivo de permissões completo em app/models/ability.rb
-```sh
+```ruby
 def initialize(user)
-    case user.role
+  case user.role
+  when "admin"
+    can :manage, :all
+  when "attendant"
+    can :read, Visit, unit_id: user.unit_id
+    can :read, Visitor
 
-    when "admin"
-      can :manage, :all
-    when "attendant"
-      can :read, Visit, unit_id: user.unit_id
-      can :read, Visitor
+    can :update, Visit, unit_id: user.unit_id
+    can :update, Visitor
 
-      can :update, Visit, unit_id: user.unit_id
-      can :update, Visitor
+    can :create, Visit
+    can :create, Visitor
 
-      can :create, Visit
-      can :create, Visitor
-
-      can :verify_by_cpf, Visitor
-    when "employee"
-      can :read, Visit, unit_id: user.unit_id
-      can :update, Visit, unit_id: user.unit_id
-    end
+    can :verify_by_cpf, Visitor
+  when "employee"
+    can :read, Visit, unit_id: user.unit_id
+    can :update, Visit, unit_id: user.unit_id
+  end
 end
 ```
 
-### Banco de Dados
+#### Explicação:
+- **Admin** tem permissões completas e pode gerenciar todos os recursos do sistema.
+- **Attendant** pode ler, criar e atualizar registros de visitas e visitantes dentro da sua unidade específica, além de realizar a verificação por **CPF** de visitantes.
+- **Employee** pode ler e atualizar visitas dentro da sua unidade.
+
+## 🗃️ Banco de Dados
 
 ### Normalização do Banco de Dados
+
 O banco de dados foi projetado e estruturado de acordo com as três primeiras formas normais (1FN, 2FN e 3FN), garantindo um alto nível de integridade e eficiência na organização dos dados.
 
-Uma breve explicação sobre as tres formas normais em um banco de dados:
-Primeira Forma Normal (1FN): todas as colunas nas tabelas contêm valores atômicos, sem campos que armazenem múltiplos valores ou listas. Cada valor é único e independente dentro de suas respectivas colunas.
-Segunda Forma Normal (2FN): todas as colunas não-chave dependam completamente da chave primária, eliminando dependências parciais.
-Terceira Forma Normal (3FN): não há dependências transitivas entre as colunas, ou seja, as colunas dependem apenas da chave primária e não umas das outras.
+#### Explicação das Três Formas Normais:
+
+- **Primeira Forma Normal (1FN)**: Todas as colunas nas tabelas contêm valores atômicos, sem campos que armazenem múltiplos valores ou listas. Cada valor é único e independente dentro de suas respectivas colunas.
+  
+- **Segunda Forma Normal (2FN)**: Todas as colunas não-chave dependem completamente da chave primária, eliminando dependências parciais.
+  
+- **Terceira Forma Normal (3FN)**: Não há dependências transitivas entre as colunas, ou seja, as colunas dependem apenas da chave primária e não umas das outras.
 
 ![Banco de dados - Imagem](https://drive.google.com/uc?export=view&id=1Aj0z4ckj0zLDjRgKxzx2OSrZ0qlupNOu)
 
-### Relacçoes, chaves extrangeiras, enums e validações
+### Relacionamentos, Chaves Estrangeiras, Enums e Validações
 
-### Tabelas e Relacionamentos:
+#### Tabelas e Relacionamentos:
 
 ![Diagrama ER](https://drive.google.com/uc?id=1KcNN1DS-6CjBhkOGVfSnuuTzJQuA_iHS)
 
-### Explicação das notações na imagem
-1..n	Um para muitos
-1..1	Um para um
-n..1	Muitos para um
-n..n	Muitos para muitos
+#### Explicação das Notações na Imagem:
+- **1..n**: Um para muitos
+- **1..1**: Um para um
+- **n..1**: Muitos para um
+- **n..n**: Muitos para muitos
 
-
+#### Tabelas e Relacionamentos:
 1. **Tabela `sectors` (Setores)**:
-     - `belongs_to :unit`: Cada setor pertence a uma unidade.
-     - `has_many :visits`: Um setor pode ter várias visitas registradas.
+   - `belongs_to :unit`: Cada setor pertence a uma unidade.
+   - `has_many :visits`: Um setor pode ter várias visitas registradas.
 
 2. **Tabela `units` (Unidades)**:
-     - `has_many :sectors`: Uma unidade pode ter vários setores.
-     - `has_many :users`: Uma unidade pode ter vários usuários.
-     - `has_many :visits`: Uma unidade pode ter várias visitas.
-   
+   - `has_many :sectors`: Uma unidade pode ter vários setores.
+   - `has_many :users`: Uma unidade pode ter vários usuários.
+   - `has_many :visits`: Uma unidade pode ter várias visitas.
+
 3. **Tabela `users` (Usuários)**:
-     - `belongs_to :unit, optional: true`: Um usuário pertence a uma unidade (opcional).
-     - `belongs_to :sector, optional: true`: Um usuário pertence a um setor (opcional).
-     - `has_many :visits`: Um usuário pode ter várias visitas.
-   
+   - `belongs_to :unit, optional: true`: Um usuário pertence a uma unidade (opcional).
+   - `belongs_to :sector, optional: true`: Um usuário pertence a um setor (opcional).
+   - `has_many :visits`: Um usuário pode ter várias visitas.
+
 4. **Tabela `visitors` (Visitantes)**:
-     - `has_many :visits`: Um visitante pode ter várias visitas.
+   - `has_many :visits`: Um visitante pode ter várias visitas.
 
 5. **Tabela `visits` (Visitas)**:
-     - `belongs_to :visitor`: Cada visita pertence a um visitante.
-     - `belongs_to :unit`: Cada visita pertence a uma unidade.
-     - `belongs_to :sector`: Cada visita pertence a um setor.
-     - `belongs_to :user, optional: true`: Cada visita pode ser associada a um usuário, mas isso é opcional (não obrigatório).
+   - `belongs_to :visitor`: Cada visita pertence a um visitante.
+   - `belongs_to :unit`: Cada visita pertence a uma unidade.
+   - `belongs_to :sector`: Cada visita pertence a um setor.
+   - `belongs_to :user, optional: true`: Cada visita pode ser associada a um usuário, mas isso é opcional.
 
 ### Relacionamentos de Chaves Estrangeiras:
 - **`sectors`**: Tem uma chave estrangeira (`unit_id`) que se relaciona com a tabela `units`.
@@ -336,85 +352,217 @@ n..n	Muitos para muitos
 - **`visits`**: Tem chaves estrangeiras (`visitor_id`, `unit_id`, `sector_id`, `user_id`) que se relacionam com `visitors`, `units`, `sectors` e `users`.
 
 ### Enum:
-- O campo `status` da tabela `visits` tem um enum que define o status da visita: `pending` (pendente), `completed` (completada) e `absent` (ausente).
-- O campo `role` da tabela `users` define o papel do usuário, podendo ser: `employee` (funcionário), `attendant` (atendente) ou `admin` (administrador).
+- **Campo `status`** da tabela **`visits`**: Define o status da visita com os seguintes valores:
+  - `pending` (pendente)
+  - `completed` (completada)
+  - `absent` (ausente)
+  
+- **Campo `role`** da tabela **`users`**: Define o papel do usuário com os seguintes valores:
+  - `employee` (funcionário)
+  - `attendant` (atendente)
+  - `admin` (administrador)
 
 ### Validações:
-- As validações em várias tabelas garantem que os dados inseridos sejam válidos, como CPF, RG, email, entre outros.
-- `User` e `Visitor` têm validações específicas para o Telefone, CPF e RG, garantindo que sejam válidos de acordo com os padrões brasileiros.
+- **Validações em várias tabelas** garantem que os dados inseridos sejam válidos, como CPF, RG, e-mail, entre outros.
+- **`User`** e **`Visitor`** possuem validações específicas para Telefone, CPF e RG, garantindo que sigam os padrões brasileiros.
 
-Para configurar o banco de dados, execute os seguintes comandos:
+## 🚀 Executando o Projeto
 
-```sh
-bin/rails db:create
-bin/rails db:migrate
-bin/rails db:seed - por padrão deixei um usuario com credenciais de administrador registrado, execute antes para poder fazer o primeiro login, sem isso voce nao ira conseguir
-```
+### Passo 1: Instalar Dependências
 
-o comando seed acima vai gerar um usuario admin com essas informações, mas antes de executar, va ao model de user e desative a validação de foto, execute e reative a validação de photo, isso é um bug que não consegui resolver ate o momento por conta que para resolver tenho que usar outra biblioteca para upload de fotos
+1. **Clone o repositório do projeto:**
 
-p arquivo está em: app/models/user.rb
-```sh
-  validates :photo, presence: true
-```
+   Se você ainda não tem o projeto em sua máquina local, clone o repositório utilizando o comando:
 
-mude para false, execute, defina como true
+   ```sh
+   git clone <URL_DO_REPOSITORIO>
+   ```
 
-```sh
-  email: keyllianazevedo2@gmail.com
-  password: "123456",
-  password_confirmation: "123456",
-  confirmed_at: Time.now,
-  role: 2,
-  cpf: "24327784052", # CPF gerado pelo site https://www.4devs.com.br/gerador_de_cpf
-  rg: "123456789",
-  name: "Keyllian Azevedo",
-  telephone: "55 92 36170584", # Telefone gerado pelo site https://geradornv.com.br/gerador-telefone/
-```
+2. **Navegue até a pasta do projeto:**
 
+   Entre na pasta do projeto com o comando:
 
-### Executando o Projeto
+   ```sh
+   cd nome-do-projeto
+   ```
 
-Para executar o projeto localmente, utilize o Docker Compose:
+3. **Crie o arquivo `.env`:**
 
-```sh
-docker-compose up
-```
+   Na raiz do projeto, crie um arquivo `.env` com as variáveis de ambiente necessárias. Para isso, adicione os seguintes parâmetros (sem valores) conforme descrito:
 
-Se tudo ocorrer sem erros a aplicação estará disponível em `http://localhost:3000`.
+   ```env
+   POSTGRES_USER=seu_usuario_no_banco
+   POSTGRES_PASSWORD=sua_senha_do_banco
+   POSTGRES_DB=nome_do_banco
+   DATABASE_HOST=localhost
+   EMAIL_GMAIL=seu_email@gmail.com
+   PASSWORD_GMAIL=sua_senha_de_aplicativo
+   AWS_ACCESS_KEY_ID=sua_chave_de_acesso_aws
+   AWS_SECRET_ACCESS_KEY=sua_chave_secreta_aws
+   AWS_BUCKET_NAME=seu_nome_do_bucket_aws
+   AWS_REGION=regiao_do_bucket_aws
+   ```
+#### Explicação das Variáveis:
+  - **POSTGRES_USER**, **POSTGRES_PASSWORD**, **POSTGRES_DB**: Credenciais e informações de configuração para o banco de dados PostgreSQL.
+  - **DATABASE_HOST**: O endereço onde o banco de dados está hospedado (geralmente `localhost` durante o desenvolvimento local).
+  - **EMAIL_GMAIL** e **PASSWORD_GMAIL**: Credenciais de acesso ao serviço de e-mail via **Gmail** para enviar e-mails através do **Action Mailer**.
+  - **AWS_ACCESS_KEY_ID**, **AWS_SECRET_ACCESS_KEY**, **AWS_BUCKET_NAME**, **AWS_REGION**: Credenciais e informações relacionadas ao uso do **AWS S3** para o armazenamento de arquivos.
 
-## Testes
+4. **Instale as dependências com o `bundle`:**
 
-Por conta do limitado tempo de desenvolvimento, não consegui criar testes unitários, mas caso voce queira criar testes e executado o comando é o seguinte
+   Para instalar as dependências do projeto, execute o seguinte comando:
+
+   ```sh
+   bundle install
+   ```
+
+   Isso irá baixar e instalar todas as gems necessárias para o projeto.
+
+---
+
+### Passo 2: Configuração do Banco de Dados
+
+5. **Crie o banco de dados:**
+
+   Execute o seguinte comando para criar o banco de dados:
+
+   ```sh
+   bin/rails db:create
+   ```
+
+6. **Execute as migrações:**
+
+   Depois de criar o banco de dados, execute as migrações para criar as tabelas necessárias:
+
+   ```sh
+   bin/rails db:migrate
+   ```
+
+7. **Popule o banco com dados iniciais (seeds):**
+
+   Se você desejar adicionar dados iniciais ao banco (como um usuário administrador), execute o comando:
+
+   ```sh
+   bin/rails db:seed
+   ```
+
+   **Nota:** O comando `seed` acima irá gerar um usuário admin com as seguintes informações, mas antes de executá-lo, vá até o model de `user` e desative a validação de foto. Execute o comando e depois reative a validação de foto, pois há um bug que impede a            execução correta sem essa alteração, uma possível solução seria utilizar outra gem para o upload de fotos, mas, por enquanto, mantive a atual para atender aos requisitos do projeto.
+
+   O arquivo está em: `app/models/user.rb`
+
+   **Altere a validação de foto temporariamente:**
+
+   ```ruby
+   validates :photo, presence: false  # Desative a validação temporariamente
+   ```
+
+   Após rodar o `db:seed`, reative a validação:
+
+   ```ruby
+   validates :photo, presence: true
+   ```
+
+   **Dados do Usuário Admin para o `seed`:**
+
+   ```sh
+   email: "keyllianazevedo2@gmail.com"
+   password: "123456",
+   password_confirmation: "123456",
+   confirmed_at: Time.now,
+   role: 2,
+   cpf: "24327784052",  # CPF gerado pelo site https://www.4devs.com.br/gerador_de_cpf
+   rg: "123456789",
+   name: "Keyllian Azevedo",
+   telephone: "55 92 36170584",  # Telefone gerado pelo site https://geradornv.com.br/gerador-telefone/
+   ```
+
+---
+
+### Passo 3: Executar o Projeto com Docker
+
+8. **Suba os containers com Docker Compose:**
+
+   Caso você queira rodar o projeto em containers Docker, execute:
+
+   ```sh
+   docker-compose up
+   ```
+
+   Isso irá levantar os containers para o banco de dados e a aplicação, conforme descrito no `docker-compose.yml`.
+
+---
+
+### Passo 4: Acessar o Projeto
+
+9. **Acesse a aplicação:**
+
+  Se tudo ocorrer sem erros, a aplicação estará disponível em `http://localhost:3000`. Caso ocorra algum erro durante a execução, consulte os logs ou entre em contato para que eu possa te ajudar a resolver.
+
+---
+
+## ⚙️ Outros Comandos Úteis
+
+- **Parar o Docker Compose:**
+
+   Se você estiver usando Docker, para parar os containers, execute:
+
+   ```sh
+   docker-compose down
+   ```
+
+- **Rodar o servidor sem Docker:**
+
+   Caso você não esteja utilizando Docker, pode rodar o servidor localmente com o comando:
+
+   ```sh
+   bin/rails server
+   ```
+
+---
+
+## 🧪 Testes
+
+Por conta do limitado tempo de desenvolvimento, não consegui criar testes unitários, mas caso você queira criar testes e executá-los, o comando é o seguinte:
+
 ```sh
 bin/rails test
 ```
 
-## Sobre documentaçaõ da API
+Este comando executará os testes do projeto (caso existam) e mostrará os resultados no terminal.
 
-Nesse periodo proposto, o tempo foi bastante corrido, devido a isso não consegui implementar o swagger para documentação das rotas e ect, mas aqui estão as principais rotas da api:
+Se você for adicionar ou criar novos testes, pode usar as funcionalidades da framework de testes do Rails, como **Test::Unit** ou **RSpec**, dependendo de como preferir estruturar seus testes.
 
-#### Autenticação
+Aqui está a seção completa de **Documentação da API** para o seu guia de execução do projeto:
+
+---
+
+## 📝 Documentação da API
+
+Neste período, o tempo foi corrido e, por isso, não consegui implementar o Swagger para a documentação das rotas. No entanto, aqui estão as principais rotas da API gerado por IA:
+
+### Autenticação
 
 - **POST /users/sign_in**
-  - Descrição: Realiza o login do usuário.
-  - Parâmetros:
+  - **Descrição**: Realiza o login do usuário.
+  - **Parâmetros**:
     - `email`: string (obrigatório)
     - `password`: string (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `200 OK`: Login bem-sucedido.
     - `401 Unauthorized`: Credenciais inválidas.
 
 - **DELETE /users/sign_out**
-  - Descrição: Realiza o logout do usuário.
-  - Respostas:
+  - **Descrição**: Realiza o logout do usuário.
+  - **Respostas**:
     - `204 No Content`: Logout bem-sucedido.
 
-#### Usuários
+---
+
+### Usuários
 
 - **POST /users**
-  - Descrição: Cria um novo usuário.
-  - Parâmetros:
+  - **Descrição**: Cria um novo usuário.
+  - **Parâmetros**:
     - `email`: string (obrigatório)
     - `password`: string (obrigatório)
     - `name`: string (obrigatório)
@@ -425,146 +573,147 @@ Nesse periodo proposto, o tempo foi bastante corrido, devido a isso não consegu
     - `role`: integer (obrigatório)
     - `unit_id`: uuid (opcional)
     - `sector_id`: uuid (opcional)
-  - Respostas:
+  - **Respostas**:
     - `201 Created`: Usuário criado com sucesso.
     - `422 Unprocessable Entity`: Erro de validação.
 
 - **GET /users**
-  - Descrição: Retorna a lista de usuários.
-  - Respostas:
+  - **Descrição**: Retorna a lista de usuários.
+  - **Respostas**:
     - `200 OK`: Lista de usuários.
 
-#### Visitantes
+---
+
+### Visitantes
 
 - **GET /visitors**
-  - Descrição: Retorna a lista de visitantes.
-  - Respostas:
+  - **Descrição**: Retorna a lista de visitantes.
+  - **Respostas**:
     - `200 OK`: Lista de visitantes.
 
 - **POST /visitors**
-  - Descrição: Cria um novo visitante.
-  - Parâmetros:
+  - **Descrição**: Cria um novo visitante.
+  - **Parâmetros**:
     - `name`: string (obrigatório)
     - `cpf`: string (obrigatório)
     - `rg`: string (obrigatório)
     - `telephone`: string (obrigatório)
     - `photo`: arquivo (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `201 Created`: Visitante criado com sucesso.
     - `422 Unprocessable Entity`: Erro de validação.
 
 - **GET /visitors/:id**
-  - Descrição: Retorna os detalhes de um visitante específico.
-  - Parâmetros:
+  - **Descrição**: Retorna os detalhes de um visitante específico.
+  - **Parâmetros**:
     - `id`: uuid (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `200 OK`: Detalhes do visitante.
     - `404 Not Found`: Visitante não encontrado.
 
-#### Visitas
+---
+
+### Visitas
 
 - **GET /visits**
-  - Descrição: Retorna a lista de visitas.
-  - Respostas:
+  - **Descrição**: Retorna a lista de visitas.
+  - **Respostas**:
     - `200 OK`: Lista de visitas.
 
 - **POST /visits**
-  - Descrição: Cria uma nova visita.
-  - Parâmetros:
+  - **Descrição**: Cria uma nova visita.
+  - **Parâmetros**:
     - `visitor_id`: uuid (obrigatório)
     - `unit_id`: uuid (obrigatório)
     - `sector_id`: uuid (obrigatório)
     - `user_id`: uuid (opcional)
     - `date_time`: datetime (obrigatório)
     - `status`: integer (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `201 Created`: Visita criada com sucesso.
     - `422 Unprocessable Entity`: Erro de validação.
 
 - **GET /visits/:id**
-  - Descrição: Retorna os detalhes de uma visita específica.
-  - Parâmetros:
+  - **Descrição**: Retorna os detalhes de uma visita específica.
+  - **Parâmetros**:
     - `id`: uuid (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `200 OK`: Detalhes da visita.
     - `404 Not Found`: Visita não encontrada.
 
-#### Setores
+---
+
+### Setores
 
 - **GET /sectors**
-  - Descrição: Retorna a lista de setores.
-  - Respostas:
+  - **Descrição**: Retorna a lista de setores.
+  - **Respostas**:
     - `200 OK`: Lista de setores.
 
 - **POST /sectors**
-  - Descrição: Cria um novo setor.
-  - Parâmetros:
+  - **Descrição**: Cria um novo setor.
+  - **Parâmetros**:
     - `name`: string (obrigatório)
     - `unit_id`: uuid (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `201 Created`: Setor criado com sucesso.
     - `422 Unprocessable Entity`: Erro de validação.
 
 - **GET /sectors/:id**
-  - Descrição: Retorna os detalhes de um setor específico.
-  - Parâmetros:
+  - **Descrição**: Retorna os detalhes de um setor específico.
+  - **Parâmetros**:
     - `id`: uuid (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `200 OK`: Detalhes do setor.
     - `404 Not Found`: Setor não encontrado.
 
-#### Unidades
+---
+
+### Unidades
 
 - **GET /units**
-  - Descrição: Retorna a lista de unidades.
-  - Respostas:
+  - **Descrição**: Retorna a lista de unidades.
+  - **Respostas**:
     - `200 OK`: Lista de unidades.
 
 - **POST /units**
-  - Descrição: Cria uma nova unidade.
-  - Parâmetros:
+  - **Descrição**: Cria uma nova unidade.
+  - **Parâmetros**:
     - `name`: string (obrigatório)
     - `email`: string (opcional)
-  - Respostas:
+  - **Respostas**:
     - `201 Created`: Unidade criada com sucesso.
     - `422 Unprocessable Entity`: Erro de validação.
 
 - **GET /units/:id**
-  - Descrição: Retorna os detalhes de uma unidade específica.
-  - Parâmetros:
+  - **Descrição**: Retorna os detalhes de uma unidade específica.
+  - **Parâmetros**:
     - `id`: uuid (obrigatório)
-  - Respostas:
+  - **Respostas**:
     - `200 OK`: Detalhes da unidade.
     - `404 Not Found`: Unidade não encontrada.
 
-## Contribuição
+---
 
-Sobre contribuições nesse projeto, elas são bem-vindas! Sinta-se à vontade para abrir issues e pull requests, caso esse projeto tome continuedade, podemos continuar o desenvolviemnto.
+Caso queira documentar mais rotas ou utilizar ferramentas como o Swagger no futuro, você pode facilmente adicionar essas rotas a partir dessa estrutura inicial.
 
-## Clonando o Repositório
+## 🙌 Contribuições
 
-Para clonar o repositório, siga os passos abaixo:
+Contribuições para este projeto são bem-vindas! Se você deseja melhorar ou adicionar algo ao projeto, fique à vontade para:
 
-1. Abra o terminal.
-2. Navegue até o diretório onde você deseja clonar o repositório.
-3. Execute o comando abaixo
+1. **Abrir Issues**: Caso encontre algum bug, tenha sugestões de melhorias ou queira discutir novas funcionalidades, abra uma *issue* para que possamos analisar e discutir a melhor forma de implementar.
+   
+2. **Criar Pull Requests (PRs)**: Se você desenvolveu alguma funcionalidade, corrigiu um bug ou fez melhorias, envie um *pull request* para a branch principal. As contribuições serão avaliadas e, se estiverem de acordo com os padrões do projeto, serão aceitas.
 
-```sh
-git clone https://github.com/Keyllian7/Dunnas-Challenge.git
-```
-Apos isso entre no diretorio com o comando
-```sh
-cd (para onde voce quer ir), caso não saiba o diretorio, de o comando (ls) no linux
-```
-Depois intale as dependencias do projeto
-```sh
-bundle install
-```
+Se este projeto tiver continuidade, podemos seguir desenvolvendo e evoluindo juntos!
 
-## Imagens da web do projeto
-Antes de ver a parte web do projeto, eu queria pedir desculpas por não ter um designer legal, não manjo muito da parte de front-end mas tentei fazer algo simples, pratico e agradavel, o modelo de CRUD foi baseeada na documentação com show, index, update, delete e new, então todos os modelos são iguais, claro que cada modelo tem suas informações diferentes.
+Agradeço qualquer contribuição!
 
-abaixo deixei somente algumas imagens do projeto, se quiser velo completamente acesse o link do video no youtube onde eu mostro o projeto completo!
+## 🖼️ Imagens da Web do Projeto
+
+Antes de ver a parte web do projeto, gostaria de pedir desculpas por não ter um designer dedicado e por não ser muito experiente na parte de front-end. Contudo, tentei fazer algo simples, prático e agradável. Os modelos de views foram baseados na documentação com *show*, *index*, *update*, *delete* e *new*, então todos os modelos seguem a mesma estrutura, claro que com variações nas informações de cada modelo.
+
+Abaixo estão algumas imagens do projeto. Para ver o projeto completo, acesse o link do vídeo no YouTube, onde mostro o projeto em detalhes!
 
 | Imagem | Link |
 |--------|------|
@@ -580,20 +729,23 @@ abaixo deixei somente algumas imagens do projeto, se quiser velo completamente a
 | ![Imagem 10](https://drive.google.com/uc?id=1qYqtKCpCSX5dXaicO8JCNKQJQWBScxr7) | [Visualizar](https://drive.google.com/file/d/1qYqtKCpCSX5dXaicO8JCNKQJQWBScxr7/view?usp=sharing) |
 | ![Imagem 11](https://drive.google.com/uc?id=1zK6jR4d2xAOKPUgu8PUCCbR7rPHcU89G) | [Visualizar](https://drive.google.com/file/d/1zK6jR4d2xAOKPUgu8PUCCbR7rPHcU89G/view?usp=sharing) |
 
-### 📌 Como baixar as imagens
+### Como baixar as imagens
 
 1. Clique no link de "Visualizar" correspondente à imagem desejada.
-2. Você será redirecionado para o Google Drive onde poderá visualizar e baixar a imagem.
+2. Você será redirecionado para o Google Drive, onde poderá visualizar e baixar a imagem.
 
-## Ainda sobre o desenvolvimento
-Vou deixar imagens de algumas anotações que fiz durante o projeto, não considere a bagunça haha
+---
+
+## 💻 Ainda sobre o Desenvolvimento
+
+Aqui estão algumas imagens das anotações que fiz durante o desenvolvimento. Não considere a bagunça hahaha!
 
 ![Anotação 1](https://drive.google.com/uc?id=1QPIVChj53cs7izm-cYklBcrH-VpZuSig)
 ![Anotação 2](https://drive.google.com/uc?id=1ueWf7o7s2QLQ5ESViJU8oUnumVK0-37g)
 
+---
 
-
-## Licença
+## 📄 Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
 
