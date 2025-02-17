@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :telephone, presence: true, phone: true
   validates :cpf, presence: true
   validates :rg, presence: true
-  validates :photo, presence: false
+  validates :photo, presence: true
   validates :unit_id, presence: false
   validates :sector_id, presence: false
 
