@@ -525,6 +525,30 @@ Depois intale as dependencias do projeto
 bundle install
 ```
 
+## Imagens da web do projeto
+Antes de ver a parte web do projeto, eu queria pedir desculpas por não ter um designer legal, não manjo muito da parte de front-end mas tentei fazer algo simples, pratico e agradavel, o modelo de CRUD foi baseeada na documentação com show, index, update, delete e new, então todos os modelos são iguais, claro que cada modelo tem suas informações diferentes.
+
+abaixo deixei somente algumas imagens do projeto, se quiser velo completamente acesse o link do video no youtube onde eu mostro o projeto completo!
+
+| Imagem | Link |
+|--------|------|
+| ![Imagem 1](https://drive.google.com/uc?id=14ICIj5ZtOtkDbvcueNPZ5XTqXJGoD4Nw) | [Visualizar](https://drive.google.com/file/d/14ICIj5ZtOtkDbvcueNPZ5XTqXJGoD4Nw/view?usp=sharing) |
+| ![Imagem 2](https://drive.google.com/uc?id=17i-1K-f765ZyIaOIjhvdDahx3v6kGTh9) | [Visualizar](https://drive.google.com/file/d/17i-1K-f765ZyIaOIjhvdDahx3v6kGTh9/view?usp=sharing) |
+| ![Imagem 3](https://drive.google.com/uc?id=1Bd2llu4iMPJl9683CTk_Schcm51rq4ki) | [Visualizar](https://drive.google.com/file/d/1Bd2llu4iMPJl9683CTk_Schcm51rq4ki/view?usp=sharing) |
+| ![Imagem 4](https://drive.google.com/uc?id=1UF7UeOZEwE_ksMnNO3afY41CpBhJuJdS) | [Visualizar](https://drive.google.com/file/d/1UF7UeOZEwE_ksMnNO3afY41CpBhJuJdS/view?usp=sharing) |
+| ![Imagem 5](https://drive.google.com/uc?id=1Yj9eiZcUUtKVifK09HmC5s1DOLhCSPlG) | [Visualizar](https://drive.google.com/file/d/1Yj9eiZcUUtKVifK09HmC5s1DOLhCSPlG/view?usp=sharing) |
+| ![Imagem 6](https://drive.google.com/uc?id=1a6d5gbJCJXbBO-O7q1sRchiYv4PEg1Pe) | [Visualizar](https://drive.google.com/file/d/1a6d5gbJCJXbBO-O7q1sRchiYv4PEg1Pe/view?usp=sharing) |
+| ![Imagem 7](https://drive.google.com/uc?id=1a_trbil75wTzCvC1xuPCne29Oyc6B45P) | [Visualizar](https://drive.google.com/file/d/1a_trbil75wTzCvC1xuPCne29Oyc6B45P/view?usp=sharing) |
+| ![Imagem 8](https://drive.google.com/uc?id=1bkPfpqzHJP8_qT9ayBml5VDjcLMCnEnN) | [Visualizar](https://drive.google.com/file/d/1bkPfpqzHJP8_qT9ayBml5VDjcLMCnEnN/view?usp=sharing) |
+| ![Imagem 9](https://drive.google.com/uc?id=1dw1PGjswhR5IJBLKlbirC0bjzu-wQIAN) | [Visualizar](https://drive.google.com/file/d/1dw1PGjswhR5IJBLKlbirC0bjzu-wQIAN/view?usp=sharing) |
+| ![Imagem 10](https://drive.google.com/uc?id=1qYqtKCpCSX5dXaicO8JCNKQJQWBScxr7) | [Visualizar](https://drive.google.com/file/d/1qYqtKCpCSX5dXaicO8JCNKQJQWBScxr7/view?usp=sharing) |
+| ![Imagem 11](https://drive.google.com/uc?id=1zK6jR4d2xAOKPUgu8PUCCbR7rPHcU89G) | [Visualizar](https://drive.google.com/file/d/1zK6jR4d2xAOKPUgu8PUCCbR7rPHcU89G/view?usp=sharing) |
+
+### 📌 Como baixar as imagens
+
+1. Clique no link de "Visualizar" correspondente à imagem desejada.
+2. Você será redirecionado para o Google Drive onde poderá visualizar e baixar a imagem.
+
 ## Ainda sobre o desenvolvimento
 Vou deixar imagens de algumas anotações que fiz durante o projeto, não considere a bagunça haha
 
