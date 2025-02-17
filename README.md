@@ -1,5 +1,40 @@
 # Sistema de Controle de Entrada de Visitantes
 
+# Sumário
+
+- [📚 Antes de qualquer coisa, leia...](#antes-de-qualquer-coisa-leia)
+- [💪 Desafio Proposto](#desafio-proposto)
+  - [Objetivo do Projeto](#objetivo-do-projeto)
+  - [Funcionalidades principais](#funcionalidades-principais)
+  - [Estrutura da Instituição](#estrutura-da-instituição)
+  - [Níveis de Permissão de Usuário](#níveis-de-permissão-de-usuário)
+- [⚙️ Tecnologias Utilizadas](#tecnologias-utilizadas)
+  - [Ruby on Rails](#ruby-on-rails)
+  - [Tailwind CSS](#tailwind-css)
+  - [Rubocop](#rubocop)
+- [🛠️ Ferramentas Utilizadas](#ferramentas-utilizadas)
+- [🔧 Principais Gems Utilizadas](#principais-gems-utilizadas)
+- [📚 Materiais de Apoio Utilizados para o Desenvolvimento](#materiais-de-apoio-utilizados-para-o-desenvolvimento)
+- [💼 Serviços](#serviços)
+  - [Serviço de E-mail](#serviço-de-e-mail)
+  - [Serviço AWS](#serviço-aws)
+  - [Docker](#docker)
+- [🔒 Permissões](#permissões)
+- [🗃️ Banco de Dados](#banco-de-dados)
+  - [Normalização do Banco de Dados](#normalização-do-banco-de-dados)
+  - [Relacionamentos, Chaves Estrangeiras, Enums e Validações](#relacionamentos-chaves-estrangeiras-enums-e-validações)
+- [🚀 Executando o Projeto](#executando-o-projeto)
+  - [Passo 1: Instalar Dependências](#passo-1-instalar-dependências)
+  - [Passo 2: Configuração do Banco de Dados](#passo-2-configuração-do-banco-de-dados)
+  - [Passo 3: Executar o Projeto com Docker](#passo-3-executar-o-projeto-com-docker)
+  - [Passo 4: Acessar o Projeto](#passo-4-acessar-o-projeto)
+- [🧪 Testes](#testes)
+- [📝 Documentação da API](#documentação-da-api)
+- [🙌 Contribuições](#contribuições)
+- [🖼️ Imagens da Web do Projeto](#imagens-da-web-do-projeto)
+- [💻 Ainda sobre o Desenvolvimento](#ainda-sobre-o-desenvolvimento)
+- [📄 Licença](#licença)
+
 ## 📚 Antes de qualquer coisa, leia...  
 
 Eu aprendi a sintaxe do Ruby e o framework Ruby on Rails e desenvolvi este projeto em um período de 7 dias. Fiz tudo isso em lives no YouTube, e, ao longo desses 7 dias, realizamos cerca de 20 transmissões (até o momento), acumulando aproximadamente 70 horas de live, uma média de 10 horas por dia dedicadas a este projeto.  
