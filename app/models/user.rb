@@ -1,4 +1,4 @@
-require 'br_documents'
+require "br_documents"
 
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
@@ -29,12 +29,11 @@ class User < ApplicationRecord
 
   def validate_cpf
     unless BRDocuments::CPF.valid?(cpf)
-      errors.add(:cpf, 'Invalid or null cpf')
+      errors.add(:cpf, "Invalid or null cpf")
     end
   end
 
   def sanitize_cpf
-    self.cpf = cpf.gsub(/\D/, '')
+    self.cpf = cpf.gsub(/\D/, "")
   end
-
 end

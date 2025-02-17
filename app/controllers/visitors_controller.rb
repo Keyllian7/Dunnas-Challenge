@@ -15,26 +15,25 @@ class VisitorsController < ApplicationController
   end
 
   def verify_by_cpf
-
     @visitor = Visitor.new(visitor_params)
 
     if @visitor.cpf.blank?
-      flash.now[:alert] = 'Please provide a valid CPF'
+      flash.now[:alert] = "Please provide a valid CPF"
       render :new, status: :unprocessable_entity
       return
     end
-  
+
     unless BRDocuments::CPF.valid?(@visitor.cpf)
-      flash.now[:alert] = 'Invalid CPF'
+      flash.now[:alert] = "Invalid CPF"
       render :new, status: :unprocessable_entity
       return
     end
-  
-    cpf_clean = @visitor.cpf.gsub(/\D/, '')
+
+    cpf_clean = @visitor.cpf.gsub(/\D/, "")
     visitor_exist = Visitor.find_by(cpf: cpf_clean)
-  
+
     if visitor_exist.present?
-      flash[:alert] = 'Visitor already exists'
+      flash[:alert] = "Visitor already exists"
       redirect_to visitor_path(visitor_exist)
       return
     end
@@ -46,9 +45,9 @@ class VisitorsController < ApplicationController
 
   def create
     @visitor = Visitor.new(visitor_params)
-    
+
     if @visitor.save
-      flash[:notice] = 'Visitor created successfully'
+      flash[:notice] = "Visitor created successfully"
       redirect_to visitors_path
     else
       flash[:alert] = @visitor.errors.full_messages.to_sentence
@@ -63,7 +62,7 @@ class VisitorsController < ApplicationController
 
   def update
     if @visitor.update(visitor_params)
-      flash[:notice] = 'Visitor edited successfully'
+      flash[:notice] = "Visitor edited successfully"
       redirect_to visitors_path
     else
       flash[:alert] = @visitor.errors.full_messages.to_sentence
@@ -73,7 +72,7 @@ class VisitorsController < ApplicationController
 
   def destroy
     @visitor.destroy
-    flash[:notice] = 'Visitor deleted successfully'
+    flash[:notice] = "Visitor deleted successfully"
     redirect_to visitors_path
   end
 

@@ -4,9 +4,8 @@ class Ability
   include CanCan::Ability
 
   def initialize(user)
+    case user.role
 
-    case user.role 
-    
     when "admin"
       can :manage, :all
     when "attendant"
