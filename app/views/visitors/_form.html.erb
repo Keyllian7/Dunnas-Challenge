@@ -1,4 +1,19 @@
-<%= form_with model: @visitor, class: "bg-gray-700 p-6 rounded-lg shadow-md" do |visitor| %>
+<% @show_form = flash[:show_form] %>
+<% @cpf = flash[:cpf_data]%>
+
+<%= form_with url: verify_by_cpf_visitors_path, method: :post, class: "bg-gray-700 p-6 rounded-lg shadow-md #{'hidden' if @show_form}" do |visitor| %>
+    <div class="mb-4">
+        <%= visitor.label :cpf, class: "block text-white text-lg font-medium mb-2" %>
+        <%= visitor.text_field :cpf, name: "visitor[cpf]", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%><br>
+    </div>
+
+    <div>
+        <%= visitor.submit "Verify", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition" %>
+    </div>
+<% end %>
+
+
+<%= form_with model: @visitor, html: { multipart: true }, class: "bg-gray-700 p-6 rounded-lg shadow-md #{'hidden' unless @show_form}" do |visitor| %>
     <div class="mb-4">
         <%= visitor.label :name, class: "block text-white text-lg font-medium mb-2" %>
         <%= visitor.text_field :name, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %><br>
@@ -6,7 +21,7 @@
 
     <div class="mb-4">
         <%= visitor.label :cpf, class: "block text-white text-lg font-medium mb-2" %>
-        <%= visitor.text_field :cpf, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%><br>
+        <%= visitor.text_field :cpf, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none ", placeholder: @cpf, readonly: true, value: @cpf%><br>
     </div>
 
     <div class="mb-4">
@@ -16,21 +31,64 @@
 
     <div class="mb-4">
         <%= visitor.label :telephone, class: "block text-white text-lg font-medium mb-2" %>
-        <%= visitor.telephone_field :telephone, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%><br>
+        <%= visitor.telephone_field :telephone, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none ", oninput: "this.value = this.value.replace(/[^0-9]/g, '')"%><br>
     </div>
 
-    <% if @visitor.photo? %>
-        <div class="mb-4 flex items-center space-x-4">
-            <%= image_tag @visitor.photo.url, class: "w-20 h-20 rounded-full border-2 border-white object-cover"%>
-            <span class="text-white text-lg">Current photo</span>
+    <div class="mb-4 flex flex-col items-center">
+        <p class="text-white text-lg font-medium mb-2">Photo capture</p>
+        <video id="video" autoplay class="border border-gray-500 rounded-lg"></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <button id="snap" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-lg transition mt-4">Snap Photo</button>
+        <div class="mt-8 flex flex-col items-center">
+        <h1 class="text-white text-lg font-medium mb-2">Preview</h1>
+        <img id="photo-preview" style="display: none; width:250px; heigth:250px; border-radius:8px; margin-top:10px; object-fit: cover;"/>
         </div>
-    <% end %>
-    <div class="mb-4">
-        <%= visitor.label :photo, class: "block text-white text-lg font-medium mb-2" %>
-        <%= visitor.file_field :photo, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none "%>
     </div>
+
+    <input type="file" name="visitor[photo]" id="photo-file" style="display: none;">
 
     <div>
         <%= visitor.submit "Save", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition" %>
     </div>
 <% end %>
+
+<script>
+document.addEventListener('turbo:load', function() {
+    const video = document.querySelector('video');
+    const canvas = document.querySelector('canvas');
+    const snapButton = document.getElementById('snap');
+    const photoFile = document.getElementById('photo-file');
+    const photoPreview = document.getElementById('photo-preview');
+
+    navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+            video.srcObject = stream;
+            video.play();
+        })
+        .catch(err => {
+            console.error(err);
+        });
+
+    snapButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        canvas.width = video.videoWidth;
+        canvas.height = video.videoHeight;
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        canvas.toBlob(function(blob) {
+            const file = new File([blob], 'photo.png', { type: 'image/png' });
+
+            const dataTransfer = new DataTransfer()
+            dataTransfer.items.add(file);
+            photoFile.files = dataTransfer.files;
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                photoPreview.src = e.target.result;
+                photoPreview.style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+            }, 'image/png');
+        });
+    });
+
+</script>

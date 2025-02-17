@@ -1,53 +1,53 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="max-w-3xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+  <h1 class="text-3xl font-bold mb-6">Edit <%= resource_name.to_s.humanize %></h1>
+  <div class="flex items-center space-x-4">
+    <%= image_tag resource.photo.url, class: "w-20 h-20 rounded-full border-2 border-white object-cover" %>
+    <p class="text-2xl"><%= @current_user.name %></p>
   </div>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
+    <div class="field mt-6">
+      <%= f.label :email, class: "block text-white text-lg font-medium mb-2" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-    <% if @minimum_password_length %>
-      <br />
-      <em><%= @minimum_password_length %> characters minimum</em>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
     <% end %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password, class: "block text-white text-lg font-medium mb-2" %> <i>(leave blank if you don't want to change it)</i>
+      <%= f.password_field :password, autocomplete: "new-password", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %>
+      <% if @minimum_password_length %>
+        <br />
+        <em><%= @minimum_password_length %> characters minimum</em>
+      <% end %>
+    </div>
 
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "current-password" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation, class: "block text-white text-lg font-medium mb-2" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %>
+    </div>
 
-  <div class="field">
-    <%= f.label :photo %><br />
-    <%= f.file_field :photo %>
-  </div>
+    <div class="field">
+      <%= f.label :current_password, class: "block text-white text-lg font-medium mb-2" %> <i>(we need your current password to confirm your changes)</i><br />
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %>
+    </div>
 
-  <% if resource.photo? %>
-    <p>Current photo:</p>
-    <%= image_tag resource.photo.url, whidt: 100, height: 100, class: "rounded-circle" %>
+    <div class="field">
+      <%= f.label :photo, class: "block text-white text-lg font-medium mb-2" %>
+      <%= f.file_field :photo, class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none " %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Update", class: "w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition mt-6" %>
+    </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
+  <h3 class="text-1xl mt-8 font-bold">Cancel my account</h3>
 
-<h3>Cancel my account</h3>
+  <div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete,  class: "w-full bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-lg transition mb-6" %></div>
 
-<div>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete %></div>
-
-<%= link_to "Back", :back %>
+  <%= link_to "Back", :back, class: "w-full bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-4 mt-6 rounded-lg transition"%>
+</div>

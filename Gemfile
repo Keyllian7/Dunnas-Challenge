@@ -18,6 +18,10 @@ gem "carrierwave", "~> 2.0"
 gem "mini_magick"
 # Use Fog for AWS S3 storage [
 gem "fog-aws"
+# Use brazilian_documents for brazilian documents validation [
+gem "brazilian_documents", "~> 0.1.4"
+# Use phonelib for phone number validation [
+gem "phonelib"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
