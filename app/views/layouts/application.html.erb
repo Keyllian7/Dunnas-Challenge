@@ -31,11 +31,14 @@
       <div class="container mx-auto flex items-center justify-between">
     
       <div class="flex items-center space-x-4">
-      <%= link_to "Home", root_path, class: "text-lg font-semibold hover:text-gray-300 transition" %>
 
       <% if user_signed_in? %>
         <%= link_to (image_tag current_user.photo.url, class: "w-10 h-10 rounded-full border-2 border-white object-cover"), edit_user_registration_path %>
         <span class="text-sm text-gray-300"><%= current_user.remote_photo_url %></span>
+      <%= link_to "Home", root_path, class: "text-lg font-semibold hover:text-gray-300 transition" %>
+        <% if can? :manage, :all %>
+          <%= link_to "Dasboard", dashboard_path, class: "text-lg font-semibold hover:text-gray-300 transition" %>
+        <% end %>
       <% end %>
       </div>
 
