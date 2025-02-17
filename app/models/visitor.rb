@@ -14,14 +14,23 @@ class Visitor < ApplicationRecord
   has_many :visits
 
   validate :validate_cpf
+  validate :validate_rg
 
   def validate_cpf
     unless BRDocuments::CPF.valid?(cpf)
-      errors.add(:cpf, "Invalid or null cpf")
+      errors.add(:cpf, "Invalid cpf")
     end
   end
 
   def sanitize_cpf
     self.cpf = cpf.gsub(/\D/, "")
   end
+
+  def validate_rg
+    if !rg.match?(/\A\d{9}\z/)
+      errors.add(:rg, "Invalid rg")
+    end
+    
+  end 
+
 end

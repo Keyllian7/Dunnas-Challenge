@@ -19,6 +19,7 @@ class UnitsController < ApplicationController
     if @unit.save
       redirect_to units_path
     else
+      flash[:alert] = @unit.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end
@@ -30,13 +31,20 @@ class UnitsController < ApplicationController
     if @unit.update(unit_params)
       redirect_to units_path
     else
-      render :edit, status: :unprocessable_entity
+      flash[:alert] = @unit.errors.full_messages.join(', ')
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     @unit.destroy
     redirect_to units_path
+  end
+
+  def sectors
+    unit = Unit.find(params[:id])
+    sectors = unit.sectors
+    render json: sectors
   end
 
   private

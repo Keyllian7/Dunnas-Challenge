@@ -1,2 +1,58 @@
-<h1>Home#dashboard</h1>
-<h2><%= @message %></h2>
+
+<% if current_user.admin? %>
+<div class="max-w-auto mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
+<div class="admin-info mt-6 p-6 bg-gray-800 text-white rounded-lg">
+  <h2 class="text-xl font-bold mb-4">Application Information</h2>
+  <div class="grid grid-cols-2 gap-4">
+    <p><strong>Total users:</strong> <%= User.count %></p>
+    <p><strong>Total visits:</strong> <%= Visit.count %></p>
+    <p><strong>Total sectors:</strong> <%= Sector.count %></p>
+    <p><strong>Total units:</strong> <%= Unit.count %></p>
+    <p><strong>Total visitors:</strong> <%= Visitor.count %></p>
+    <p><strong>Confirmed Users:</strong> <%= User.where.not(confirmed_at: nil).count %></p>
+    <p><strong>Unconfirmed Users::</strong> <%= User.where(confirmed_at: nil).count %></p>
+    <p><strong>Pending Visits:</strong> <%= Visit.where(status: 0).count %></p>
+    <p><strong>Completed Visits:</strong> <%= Visit.where(status: 1).count %></p>
+    <p><strong>Last Registered User:</strong> <%= User.order(created_at: :desc).first.try(:name) %></p>
+  </div>
+</div>
+
+  <div class="overflow-x-auto bg-gray-700 p-6 rounded-lg shadow-lg mt-6">
+  <div class="mb-6">
+    <h1 class="text-3xl text-white font-bold">Users in the system</h1>
+  </div>
+  <table class="w-full text-white rounded-lg border border-gray-600">
+    <thead>
+      <tr class="bg-gray-800 text-left">
+        <th class="py-3 px-4 border-b border-gray-600">Name</th>
+        <th class="py-3 px-4 border-b border-gray-600">Email</th>
+        <th class="py-3 px-4 border-b border-gray-600">Role</th>
+        <th class="py-3 px-4 border-b border-gray-600">RG</th>
+        <th class="py-3 px-4 border-b border-gray-600">CPF</th>
+        <th class="py-3 px-4 border-b border-gray-600">Telephone</th>
+        <th class="py-3 px-4 border-b border-gray-600 text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr class="hover:bg-gray-600 border-b border-gray-600 mt-4">
+          <td class="py-3 px-4"><%= user.name %></td>
+          <td class="py-3 px-4"><%= user.email %></td>
+          <td class="py-3 px-4"><%= user.role %></td>
+          <td class="py-3 px-4"><%= user.rg %></td>
+          <td class="py-3 px-4"><%= user.cpf %></td>
+          <td class="py-3 px-4"><%= user.telephone %></td>
+          <td class="py-3 px-4 text-center">
+            <%= button_to 'Deletar', user_registration_path(user.id), method: :delete, data: { confirm: 'Tem certeza?' }, class: "bg-red-600 hover:bg-red-700 mt-2 mb-2 px-4 py-2 rounded-lg transition text-white font-semibold" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+  <div class="mt-6">
+    <%= link_to 'Register new user', new_user_registration_path, class: "mt-3 bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
+  </div>
+</div>
+<% end %>

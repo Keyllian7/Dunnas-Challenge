@@ -9,7 +9,7 @@
   <% end %>
   </div>
 
-  <% if can? :manage, Visitor %>
+  <% if can? :create, Visitor %>
     <div class="mt-6">
       <%= link_to 'New Visitor', new_visitor_path, class: "bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
     </div>

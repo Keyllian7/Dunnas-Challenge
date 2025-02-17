@@ -15,8 +15,16 @@ Rails.application.routes.draw do
   get "/home", to: "web#index"
   get "/dashboard", to: "web#dashboard"
 
-  resources :units
-  resources :sectors
+  resources :units do
+    member do
+        get 'sectors'
+    end
+  end
+  resources :sectors do
+    member do
+        get 'users'
+    end
+  end
   resources :visitors do
     collection do
       post :verify_by_cpf

@@ -4,7 +4,6 @@ class VisitsController < ApplicationController
   before_action :set_visit, only: [:show]
 
   def index
-    @visits = Visit.all
   end
 
   def show
@@ -19,22 +18,27 @@ class VisitsController < ApplicationController
 
   def update
     if @visit.update(visit_params)
+      flash[:notice] = "Visit updated successfully"
       redirect_to visit_path
     else
-      render :edit, status: :unprocessable_entity
+      flash[:alert] = @visit.errors.full_messages.join(', ')
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     @visit.destroy
+    flash[:notice] = "Visitor destroyed successfully"
     redirect_to visits_path
   end
 
   def create
     @visit = Visit.new(visit_params)
     if @visit.save
+      flash[:notice] = "Visit created successfully"
       redirect_to visits_path
     else
+      flash[:alert] = @visit.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end
