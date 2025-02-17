@@ -38,6 +38,12 @@ class SectorsController < ApplicationController
     end
   end
 
+  def users
+    sector = Sector.find(params[:id])
+    users = sector.users.where(role: 0)
+    render json: users
+  end
+
   def destroy
     @sector.destroy
     flash[:notice] = "Sector destroyed successfully"

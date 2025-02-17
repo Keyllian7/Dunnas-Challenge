@@ -12,6 +12,9 @@ class Ability
       can :read, Visit, unit_id: user.unit_id
       can :read, Visitor
 
+      can :manage, Sector
+      can :manage, Unit
+      
       can :update, Visit, unit_id: user.unit_id
       can :update, Visitor
 

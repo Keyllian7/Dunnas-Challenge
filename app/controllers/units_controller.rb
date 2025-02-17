@@ -41,6 +41,12 @@ class UnitsController < ApplicationController
     redirect_to units_path
   end
 
+  def sectors
+    unit = Unit.find(params[:id])
+    sectors = unit.sectors
+    render json: sectors
+  end
+
   private
 
   def unit_params
