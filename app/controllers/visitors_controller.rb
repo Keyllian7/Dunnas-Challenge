@@ -62,7 +62,7 @@ class VisitorsController < ApplicationController
 
   def update
     if @visitor.update(visitor_params)
-      flash[:notice] = "Visitor edited successfully"
+      flash[:notice] = "Visitor updated successfully"
       redirect_to visitors_path
     else
       flash[:alert] = @visitor.errors.full_messages.to_sentence

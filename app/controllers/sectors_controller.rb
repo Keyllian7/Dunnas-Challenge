@@ -17,8 +17,10 @@ class SectorsController < ApplicationController
   def create
     @sector = Sector.new(sector_params)
     if @sector.save
+      flash[:notice] = "Sector created successfully"
       redirect_to sectors_path
     else
+      flash[:alert] = @sector.errors.full_messages.join(', ')
       render :new, status: :unprocessable_entity
     end
   end
@@ -28,14 +30,17 @@ class SectorsController < ApplicationController
 
   def update
     if @sector.update(sector_params)
+      flash[:notice] = "Sector updated successfully"
       redirect_to sector_path
     else
-      render :edit, status: :unprocessable_entity
+      flash[:alert] = @sector.errors.full_messages.join(', ')
+      render :new, status: :unprocessable_entity
     end
   end
 
   def destroy
     @sector.destroy
+    flash[:notice] = "Sector destroyed successfully"
     redirect_to sectors_path
   end
 
