@@ -778,6 +778,7 @@ Aqui estão algumas imagens das anotações que fiz durante o desenvolvimento. N
 
 ![Anotação 1](https://drive.google.com/uc?id=1QPIVChj53cs7izm-cYklBcrH-VpZuSig)
 ![Anotação 2](https://drive.google.com/uc?id=1ueWf7o7s2QLQ5ESViJU8oUnumVK0-37g)
+![Anotação 3](https://drive.google.com/uc?id=14_BNf_yNBqaACm4LAurvjGOEVXjfgzL5)
 
 ---
 
