@@ -4,12 +4,12 @@
   <div class="space-y-4"id="visits">
     <% @visits.each do |visit|%>
       <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
-        <%= link_to visit.date_time, visit, class: "text-lg font-medium text-blue-400 hover:underline" %>
+        <%= link_to "#{visit.visitor.name} - #{visit.date_time.strftime('%d/%m/%Y %H:%M')}", visit, class: "text-lg font-medium text-blue-400 hover:underline" %>
       </div>
     <%end%>
   </div>
 
-  <% if can? :manage, Visit %>
+  <% if can? :create, Visit %>
     <div class="mt-6">
       <%= link_to 'New Visit', new_visit_path, class: "bg-green-600 hover:bg-green-700 px-4 py-2 rounded-lg transition" %>
     </div>

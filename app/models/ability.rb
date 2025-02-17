@@ -9,9 +9,19 @@ class Ability
     when "admin"
       can :manage, :all
     when "attendant"
-      can :manage, [Visitor, Visit]
+      can :read, Visit, unit_id: user.unit_id
+      can :read, Visitor
+
+      can :update, Visit, unit_id: user.unit_id
+      can :update, Visitor
+
+      can :create, Visit
+      can :create, Visitor
+
+      can :verify_by_cpf, Visitor
     when "employee"
-      can :read, :all
+      can :read, Visit, unit_id: user.unit_id
+      can :update, Visit, unit_id: user.unit_id
     end
     # Define abilities for the user here. For example:
     #

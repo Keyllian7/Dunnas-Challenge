@@ -4,7 +4,6 @@ class VisitsController < ApplicationController
   before_action :set_visit, only: [:show]
 
   def index
-    @visits = Visit.all
   end
 
   def show
