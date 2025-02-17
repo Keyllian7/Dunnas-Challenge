@@ -20,5 +20,4 @@ class Visit < ApplicationRecord
       errors.add(:date_time, "the visit cannot be on a past date")
     end
   end
-
 end

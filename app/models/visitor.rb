@@ -30,7 +30,5 @@ class Visitor < ApplicationRecord
     if !rg.match?(/\A\d{9}\z/)
       errors.add(:rg, "Invalid rg")
     end
-    
-  end 
-
+  end
 end

@@ -14,7 +14,7 @@ class Ability
 
       can :users, Sector
       can :sectors, Unit
-      
+
       can :update, Visit, unit_id: user.unit_id
       can :update, Visitor
 

@@ -20,7 +20,7 @@ class SectorsController < ApplicationController
       flash[:notice] = "Sector created successfully"
       redirect_to sectors_path
     else
-      flash[:alert] = @sector.errors.full_messages.join(', ')
+      flash[:alert] = @sector.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end
@@ -33,7 +33,7 @@ class SectorsController < ApplicationController
       flash[:notice] = "Sector updated successfully"
       redirect_to sector_path
     else
-      flash[:alert] = @sector.errors.full_messages.join(', ')
+      flash[:alert] = @sector.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end

@@ -43,5 +43,4 @@ class User < ApplicationRecord
       errors.add(:rg, "Invalid rg")
     end
   end
-
 end

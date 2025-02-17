@@ -17,12 +17,12 @@ Rails.application.routes.draw do
 
   resources :units do
     member do
-        get 'sectors'
+      get "sectors"
     end
   end
   resources :sectors do
     member do
-        get 'users'
+      get "users"
     end
   end
   resources :visitors do

@@ -17,5 +17,5 @@ user.update!(
   cpf: "24327784052", # CPF gerado pelo site https://www.4devs.com.br/gerador_de_cpf
   rg: "123456789",
   name: "Keyllian Azevedo",
-  telephone: "55 92 36170584", # Telefone gerado pelo site https://geradornv.com.br/gerador-telefone/
+  telephone: "55 92 36170584" # Telefone gerado pelo site https://geradornv.com.br/gerador-telefone/
 )

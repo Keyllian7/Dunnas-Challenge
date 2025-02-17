@@ -19,7 +19,7 @@ class UnitsController < ApplicationController
     if @unit.save
       redirect_to units_path
     else
-      flash[:alert] = @unit.errors.full_messages.join(', ')
+      flash[:alert] = @unit.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end
@@ -31,7 +31,7 @@ class UnitsController < ApplicationController
     if @unit.update(unit_params)
       redirect_to units_path
     else
-      flash[:alert] = @unit.errors.full_messages.join(', ')
+      flash[:alert] = @unit.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end

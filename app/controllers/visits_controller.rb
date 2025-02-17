@@ -21,7 +21,7 @@ class VisitsController < ApplicationController
       flash[:notice] = "Visit updated successfully"
       redirect_to visit_path
     else
-      flash[:alert] = @visit.errors.full_messages.join(', ')
+      flash[:alert] = @visit.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end
@@ -38,7 +38,7 @@ class VisitsController < ApplicationController
       flash[:notice] = "Visit created successfully"
       redirect_to visits_path
     else
-      flash[:alert] = @visit.errors.full_messages.join(', ')
+      flash[:alert] = @visit.errors.full_messages.join(", ")
       render :new, status: :unprocessable_entity
     end
   end
