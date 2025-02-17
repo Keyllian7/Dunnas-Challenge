@@ -236,8 +236,98 @@ AWS_BUCKET_NAME=o nome do seu bucket na aws
 AWS_REGION=região do seu bucket na aws
 
 ```
+## Permissões
+
+as permissẽos são baseadas no roles e usuario
+0 = employee (funcionario)
+1 = attendant (atendente)
+2 = admin (admin)
+
+usamos a gem cancan para configurar as permissões dos usuarios, voce pode encontrar o arquivo de permissões completo em app/models/ability.rb
+```sh
+def initialize(user)
+    case user.role
+
+    when "admin"
+      can :manage, :all
+    when "attendant"
+      can :read, Visit, unit_id: user.unit_id
+      can :read, Visitor
+
+      can :update, Visit, unit_id: user.unit_id
+      can :update, Visitor
+
+      can :create, Visit
+      can :create, Visitor
+
+      can :verify_by_cpf, Visitor
+    when "employee"
+      can :read, Visit, unit_id: user.unit_id
+      can :update, Visit, unit_id: user.unit_id
+    end
+end
+```
 
 ### Banco de Dados
+
+### Normalização do Banco de Dados
+O banco de dados foi projetado e estruturado de acordo com as três primeiras formas normais (1FN, 2FN e 3FN), garantindo um alto nível de integridade e eficiência na organização dos dados.
+
+Uma breve explicação sobre as tres formas normais em um banco de dados:
+Primeira Forma Normal (1FN): todas as colunas nas tabelas contêm valores atômicos, sem campos que armazenem múltiplos valores ou listas. Cada valor é único e independente dentro de suas respectivas colunas.
+Segunda Forma Normal (2FN): todas as colunas não-chave dependam completamente da chave primária, eliminando dependências parciais.
+Terceira Forma Normal (3FN): não há dependências transitivas entre as colunas, ou seja, as colunas dependem apenas da chave primária e não umas das outras.
+
+![Banco de dados - Imagem](https://drive.google.com/uc?export=view&id=1Aj0z4ckj0zLDjRgKxzx2OSrZ0qlupNOu)
+
+### Relacçoes, chaves extrangeiras, enums e validações
+
+### Tabelas e Relacionamentos:
+
+![Diagrama ER](https://drive.google.com/uc?id=1KcNN1DS-6CjBhkOGVfSnuuTzJQuA_iHS)
+
+### Explicação das notações na imagem
+1..n	Um para muitos
+1..1	Um para um
+n..1	Muitos para um
+n..n	Muitos para muitos
+
+
+1. **Tabela `sectors` (Setores)**:
+     - `belongs_to :unit`: Cada setor pertence a uma unidade.
+     - `has_many :visits`: Um setor pode ter várias visitas registradas.
+
+2. **Tabela `units` (Unidades)**:
+     - `has_many :sectors`: Uma unidade pode ter vários setores.
+     - `has_many :users`: Uma unidade pode ter vários usuários.
+     - `has_many :visits`: Uma unidade pode ter várias visitas.
+   
+3. **Tabela `users` (Usuários)**:
+     - `belongs_to :unit, optional: true`: Um usuário pertence a uma unidade (opcional).
+     - `belongs_to :sector, optional: true`: Um usuário pertence a um setor (opcional).
+     - `has_many :visits`: Um usuário pode ter várias visitas.
+   
+4. **Tabela `visitors` (Visitantes)**:
+     - `has_many :visits`: Um visitante pode ter várias visitas.
+
+5. **Tabela `visits` (Visitas)**:
+     - `belongs_to :visitor`: Cada visita pertence a um visitante.
+     - `belongs_to :unit`: Cada visita pertence a uma unidade.
+     - `belongs_to :sector`: Cada visita pertence a um setor.
+     - `belongs_to :user, optional: true`: Cada visita pode ser associada a um usuário, mas isso é opcional (não obrigatório).
+
+### Relacionamentos de Chaves Estrangeiras:
+- **`sectors`**: Tem uma chave estrangeira (`unit_id`) que se relaciona com a tabela `units`.
+- **`users`**: Tem chaves estrangeiras (`unit_id`, `sector_id`) que se relacionam com `units` e `sectors`.
+- **`visits`**: Tem chaves estrangeiras (`visitor_id`, `unit_id`, `sector_id`, `user_id`) que se relacionam com `visitors`, `units`, `sectors` e `users`.
+
+### Enum:
+- O campo `status` da tabela `visits` tem um enum que define o status da visita: `pending` (pendente), `completed` (completada) e `absent` (ausente).
+- O campo `role` da tabela `users` define o papel do usuário, podendo ser: `employee` (funcionário), `attendant` (atendente) ou `admin` (administrador).
+
+### Validações:
+- As validações em várias tabelas garantem que os dados inseridos sejam válidos, como CPF, RG, email, entre outros.
+- `User` e `Visitor` têm validações específicas para o Telefone, CPF e RG, garantindo que sejam válidos de acordo com os padrões brasileiros.
 
 Para configurar o banco de dados, execute os seguintes comandos:
 
