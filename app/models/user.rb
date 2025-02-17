@@ -20,6 +20,7 @@ class User < ApplicationRecord
   validates :sector_id, presence: false
 
   validate :validate_cpf
+  validate :validate_rg
 
   enum :role, {employee: 0, attendant: 1, admin: 2}
 
@@ -36,4 +37,11 @@ class User < ApplicationRecord
   def sanitize_cpf
     self.cpf = cpf.gsub(/\D/, "")
   end
+
+  def validate_rg
+    if !rg.match?(/\A\d{9}\z/)
+      errors.add(:rg, "Invalid rg")
+    end
+  end
+
 end
