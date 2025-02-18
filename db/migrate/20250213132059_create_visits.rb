@@ -4,7 +4,7 @@ class CreateVisits < ActiveRecord::Migration[8.0]
       t.references :visitor, null: false, foreign_key: true, type: :uuid
       t.references :unit, null: false, foreign_key: true, type: :uuid
       t.references :sector, null: false, foreign_key: true, type: :uuid
-      t.references :user, null: false, foreign_key: true, type: :uuid
+      t.references :user, null: true, foreign_key: true, type: :uuid
       t.datetime :date_time
       t.integer :status, default: 0, null: false
 

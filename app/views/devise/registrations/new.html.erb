@@ -1,6 +1,6 @@
 <% if user_signed_in? && current_user.admin? %>
   <div class="max-w-3xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
-    <h1 class="text-3xl font-bold mb-6">Sing up</h1>
+    <h1 class="text-3xl font-bold mb-6">Register new user</h1>
 
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= render "devise/shared/error_messages", resource: resource %>
