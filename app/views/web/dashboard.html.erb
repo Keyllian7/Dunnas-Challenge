@@ -41,10 +41,9 @@
           <td class="py-3 px-4"><%= user.rg %></td>
           <td class="py-3 px-4"><%= user.cpf %></td>
           <td class="py-3 px-4"><%= user.telephone %></td>
-          <td class="py-3 px-4">
+          <td class="py-3 px-4 flex space-x-2">
             <%= link_to 'Edit', edit_user_path(user), class: "bg-yellow-500 hover:bg-yellow-600 px-2 py-1 rounded-lg transition" %>
-            <%= button_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?' }, class: "bg-red-500 hover:bg-red-600 px-2 py-1 rounded-lg transition" %>
-          </td>
+            <%= button_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?', turbo_confirm: 'Are you sure?' }, class: "bg-red-500 hover:bg-red-600 px-2 py-1 rounded-lg transition" %>          </td>
         </tr>
       <% end %>
     </tbody>
