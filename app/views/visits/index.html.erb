@@ -2,7 +2,7 @@
   <h1 class="text 3xl font-bold mb-6">Visits</h1>
 
   <div class="space-y-4"id="visits">
-    <% @visits.each do |visit|%>
+    <% @visits.pending.each do |visit|%>
       <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
         <%= link_to "#{visit.visitor.name} - #{visit.date_time.strftime('%d/%m/%Y %H:%M')}", visit, class: "text-lg font-medium text-blue-400 hover:underline" %>
       </div>
