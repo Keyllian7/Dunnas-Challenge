@@ -1,12 +1,13 @@
 <div class="max-w-4xl mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
   <h1 class="text 3xl font-bold mb-6">Units</h1>
 
-  <div class="space-y-4"id="units">
+  <div class="space-y-4" id="units">
     <% @units.each do |unit| %>
-      <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition">
-      <%= link_to unit.name, unit, class: "text-lg font-medium text-blue-400 hover:underline" %>  
+      <div class="bg-gray-700 p-4 rounded-lg hover:bg-gray-600 transition flex justify-between items-center">
+        <%= link_to unit.name, unit, class: "text-lg font-medium text-blue-400 hover:underline" %>  
+        <h2 class="text-lg font-medium text-blue-400 hover:underline"><%= link_to "Visits", visits_unit_path(unit) %></h2>
       </div>
-      <% end %>
+    <% end %>
   </div>
 
   <% if can? :create, Unit %>

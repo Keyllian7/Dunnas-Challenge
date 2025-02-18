@@ -47,6 +47,11 @@ class UnitsController < ApplicationController
     render json: sectors
   end
 
+  def visits
+    @unit = Unit.find(params[:id])
+    @visits = @unit.visits
+  end
+
   private
 
   def unit_params

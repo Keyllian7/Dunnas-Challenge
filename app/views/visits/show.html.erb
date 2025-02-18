@@ -3,7 +3,7 @@
     <p class="text-lg text-gray-300 mb-2">Visitor name: <%= link_to @visit.visitor.name, visitor_path(@visit.visitor.id), class: "hover:underline text-blue-400"%></p>
     <p class="text-lg text-gray-300 mb-2">Unit: <%= link_to @visit.unit.name, unit_path(@visit.unit.id), class: "hover:underline text-blue-400"%></p>
     <p class="text-lg text-gray-300 mb-2">Sector: <%= link_to @visit.sector.name, sector_path(@visit.sector.id), class: "hover:underline text-blue-400"%></p>
-    <p class="text-lg text-gray-300 mb-2">Functionario: <%= @visit.user.name %></p>
+    <p class="text-lg text-gray-300 mb-2">Employee: <%= @visit.user&.name || "Not specified" %></p>
     <p class="text-lg text-gray-300 mb-2">Visit Date: <%= @visit.date_time%></p>
     <p class="text-lg text-gray-300 mb-2">Status: <%= @visit.status%></p>
 

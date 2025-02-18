@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   resources :units do
     member do
       get "sectors"
+      get "visits", to: "units#visits"
     end
   end
   resources :sectors do
