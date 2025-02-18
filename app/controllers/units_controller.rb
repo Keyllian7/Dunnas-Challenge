@@ -17,6 +17,7 @@ class UnitsController < ApplicationController
   def create
     @unit = Unit.new(unit_params)
     if @unit.save
+      flash[:notice] = "Unit created successfully"
       redirect_to units_path
     else
       flash[:alert] = @unit.errors.full_messages.join(", ")
@@ -29,6 +30,7 @@ class UnitsController < ApplicationController
 
   def update
     if @unit.update(unit_params)
+      flash[:notice] = "Sector updated successfully"
       redirect_to units_path
     else
       flash[:alert] = @unit.errors.full_messages.join(", ")
@@ -38,6 +40,7 @@ class UnitsController < ApplicationController
 
   def destroy
     @unit.destroy
+    flash[:notice] = "Unit deleted successfully"
     redirect_to units_path
   end
 

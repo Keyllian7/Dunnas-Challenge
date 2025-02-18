@@ -1,4 +1,3 @@
-
 <% if current_user.admin? %>
 <div class="max-w-auto mx-auto bg-gray-800 text-white p-6 rounded-lg shadow-lg mt-6">
 <div class="admin-info mt-6 p-6 bg-gray-800 text-white rounded-lg">
@@ -30,7 +29,7 @@
         <th class="py-3 px-4 border-b border-gray-600">RG</th>
         <th class="py-3 px-4 border-b border-gray-600">CPF</th>
         <th class="py-3 px-4 border-b border-gray-600">Telephone</th>
-        <th class="py-3 px-4 border-b border-gray-600 text-center">Actions</th>
+        <th class="py-3 px-4 border-b border-gray-600">Actions</th>
       </tr>
     </thead>
     <tbody>
@@ -42,9 +41,9 @@
           <td class="py-3 px-4"><%= user.rg %></td>
           <td class="py-3 px-4"><%= user.cpf %></td>
           <td class="py-3 px-4"><%= user.telephone %></td>
-          <td class="py-3 px-4 text-center">
-            <%= button_to 'Deletar', user_registration_path(user.id), method: :delete, data: { confirm: 'Tem certeza?' }, class: "bg-red-600 hover:bg-red-700 mt-2 mb-2 px-4 py-2 rounded-lg transition text-white font-semibold" %>
-          </td>
+          <td class="py-3 px-4 flex space-x-2">
+            <%= link_to 'Edit', edit_user_path(user), class: "bg-yellow-500 hover:bg-yellow-600 px-2 py-1 rounded-lg transition" %>
+            <%= button_to 'Delete', user, method: :delete, data: { confirm: 'Are you sure?', turbo_confirm: 'Are you sure?' }, class: "bg-red-500 hover:bg-red-600 px-2 py-1 rounded-lg transition" %>          </td>
         </tr>
       <% end %>
     </tbody>
