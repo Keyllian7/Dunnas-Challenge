@@ -14,5 +14,4 @@ class ApplicationController < ActionController::Base
   def handle_not_null_violation(exception)
     redirect_back(fallback_location: root_path, alert: "A required field is missing.")
   end
-
 end
