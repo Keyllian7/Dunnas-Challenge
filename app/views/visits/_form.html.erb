@@ -6,8 +6,12 @@
     </div>
 
     <div class="mb-4">
-        <%= visit.label :unit_id, "Unit", class: "block text-white text-lg font-medium mb-2"%>
-        <%= visit.collection_select :unit_id, Unit.all, :id, :name, { prompt: "Select the unit" }, id: "unit_select", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none"%>
+    <%= visit.label :unit_id, "Unit", class: "block text-white text-lg font-medium mb-2" %>
+    <% if current_user.admin? %>
+        <%= visit.collection_select :unit_id, Unit.all, :id, :name, { prompt: "Select the unit" }, id: "unit_select", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
+    <% else %>
+        <%= visit.collection_select :unit_id, Unit.where(id: current_user.unit_id), :id, :name, { prompt: "Select the unit" }, id: "unit_select", class: "w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:outline-none" %>
+    <% end %>
     </div>
 
     <div class="mb-4">
@@ -36,7 +40,7 @@
 <% end %>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('turbo:load', function() {
     const unitSelect = document.getElementById('unit_select');
     const sectorSelect = document.getElementById('sector_select');
     const userSelect = document.getElementById('user_select');
