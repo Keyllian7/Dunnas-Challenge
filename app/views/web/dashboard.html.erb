@@ -9,7 +9,7 @@
     <p><strong>Total units:</strong> <%= Unit.count %></p>
     <p><strong>Total visitors:</strong> <%= Visitor.count %></p>
     <p><strong>Confirmed Users:</strong> <%= User.where.not(confirmed_at: nil).count %></p>
-    <p><strong>Unconfirmed Users::</strong> <%= User.where(confirmed_at: nil).count %></p>
+    <p><strong>Unconfirmed Users:</strong> <%= User.where(confirmed_at: nil).count %></p>
     <p><strong>Pending Visits:</strong> <%= Visit.where(status: 0).count %></p>
     <p><strong>Completed Visits:</strong> <%= Visit.where(status: 1).count %></p>
     <p><strong>Last Registered User:</strong> <%= User.order(created_at: :desc).first.try(:name) %></p>
