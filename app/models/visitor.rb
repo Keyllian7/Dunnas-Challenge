@@ -6,7 +6,7 @@ class Visitor < ApplicationRecord
   validates :name, presence: true
   validates :rg, presence: true, uniqueness: true
   validates :cpf, presence: true, uniqueness: true
-  validates :telephone, presence: true, phone: true
+  validates :telephone, presence: true, phone: true, uniqueness: true
   validates :photo, presence: true
 
   mount_uploader :photo, PhotoUploader

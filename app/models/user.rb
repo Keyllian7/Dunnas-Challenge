@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   validates :email, presence: true, uniqueness: true
   validates :name, presence: true
-  validates :telephone, presence: true, phone: true
+  validates :telephone, presence: true, phone: true, uniqueness: true
   validates :cpf, presence: true
   validates :rg, presence: true
   validates :photo, presence: true
