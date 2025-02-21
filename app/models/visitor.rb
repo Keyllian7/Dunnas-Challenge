@@ -3,7 +3,7 @@ require "br_documents"
 class Visitor < ApplicationRecord
   before_validation :sanitize_cpf
 
-  validates :name, presence: true
+  validates :name, presence: true, length: {minimum: 3}
   validates :rg, presence: true, uniqueness: true
   validates :cpf, presence: true, uniqueness: true
   validates :telephone, presence: true, phone: true, uniqueness: true
