@@ -11,7 +11,7 @@ class User < ApplicationRecord
   before_validation :sanitize_cpf
 
   validates :email, presence: true, uniqueness: true
-  validates :name, presence: true
+  validates :name, presence: true, length: {minimum: 3}
   validates :telephone, presence: true, phone: true, uniqueness: true
   validates :cpf, presence: true
   validates :rg, presence: true
