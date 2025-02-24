@@ -39,7 +39,7 @@ Rails.application.configure do
 
   # Set localhost to be used by links generated in mailer templates.
   config.action_mailer.default_url_options = {host: "localhost", port: 3000}
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.smtp_settings = {
     address: "smtp.gmail.com",
     port: 587,
