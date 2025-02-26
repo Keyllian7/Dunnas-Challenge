@@ -13,7 +13,7 @@ gem "devise"
 # Use Cancan for user authorization [
 gem "cancancan"
 # Use CarrierWave for file uploads [
-gem "carrierwave", "~> 2.0"
+gem "carrierwave", "~> 3.1"
 # Use MiniMagick for image processing [
 gem "mini_magick"
 # Use Fog for AWS S3 storage [
