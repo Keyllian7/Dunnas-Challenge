@@ -7,7 +7,7 @@ gem "propshaft"
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.5", ">= 1.5.6"
 # Use dotenv to load environment variables from .env into ENV [
-gem "dotenv-rails", "~> 2.1", ">= 2.1.1"
+gem "dotenv-rails", "~> 3.1"
 # Use Devise for user authentication [
 gem "devise"
 # Use Cancan for user authorization [
