@@ -74,9 +74,12 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem "rspec-rails"
+  gem "factory_bot_rails"
+  gem "shoulda-matchers"
   gem "capybara"
   gem "selenium-webdriver"
+  gem "database_cleaner-active_record"
 end
 
 gem "tailwindcss-rails", "~> 4.0"
