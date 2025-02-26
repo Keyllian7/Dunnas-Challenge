@@ -32,6 +32,10 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:email, :name, :cpf, :rg, :telephone, :photo, :role, :unit_id, :sector_id)
+    if current_user.admin?
+      params.require(:user).permit(:email, :name, :cpf, :rg, :telephone, :photo, :role, :unit_id, :sector_id)
+    else
+      params.require(:user).permit(:email, :name, :cpf, :rg, :telephone, :photo, :unit_id, :sector_id)
+    end
   end
 end
